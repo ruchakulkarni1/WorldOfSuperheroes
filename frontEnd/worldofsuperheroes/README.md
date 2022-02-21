@@ -77,3 +77,8 @@ npm init -y
 
 To install node modules in front end app-
 npm install
+
+Added packages - 
+1. express
+2. cors
+3. axios
