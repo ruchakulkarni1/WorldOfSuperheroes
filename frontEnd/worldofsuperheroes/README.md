@@ -76,7 +76,7 @@ To create initial app
 npm init -y
 
 To install node modules in front end app-
-npm install
+npm install/npm i
 
 Added packages - 
 1. express
