@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import {useEffect, useState } from "react";
 import Carousel from './Components/carousel';
+import About from './Components/about';
 
 function App() {
   const [state, setState] = useState([]);
@@ -22,7 +23,6 @@ function App() {
     <Router>
       <div>
         <nav class="navbar navbar-expand-lg navbar-dark ">
-          <a class="navbar-brand inactiveLink"><h1 className="links">WORLD OF SUPER HEROS</h1></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbarMd">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -49,6 +49,7 @@ function App() {
   <Route path="/home">
           <div>
             <Carousel/>
+            <About/>
           </div>
   </Route>
   </Switch>
