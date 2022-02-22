@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import {useEffect, useState } from "react";
+import Carousel from './Components/carousel';
 
 function App() {
   const [state, setState] = useState([]);
@@ -17,6 +18,7 @@ function App() {
     getData();
   }, [])
   return (
+    <div>
     <Router>
       <div>
         <nav class="navbar navbar-expand-lg navbar-dark ">
@@ -27,7 +29,7 @@ function App() {
           <div class="navbar-collapse collapse" id="collapsingNavbarMd">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <Link to="/"><h4 className="links">HOME</h4></Link>
+                <Link to="/home"><h4 className="links">HOME</h4></Link>
               </li>
               <li class="nav-item">
                 <Link to="/characters"><h4 className="links">CHARACTERS</h4></Link>
@@ -41,8 +43,18 @@ function App() {
             </ul>
           </div>
         </nav>
-    </div>
+   
+  
+  <Switch>
+  <Route path="/home">
+          <div>
+            <Carousel/>
+          </div>
+  </Route>
+  </Switch>
+  </div>
   </Router>
+  </div>
   );
 }
 
