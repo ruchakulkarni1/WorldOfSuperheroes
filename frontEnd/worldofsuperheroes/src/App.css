@@ -36,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar{
+  background: linear-gradient(336deg, maroon, rgb(0, 0, 54) 35%);
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.nav-link{
+  color: white;
+}
+
+.links:hover{
+  color: #6197fb !important;
+  text-decoration: none !important;
+}
+
+.links:active{
+  color: #6197fb !important;
+  text-decoration: none !important;
+}
+
+.links {
+  color:  white;
+  padding: 10px;
+  text-decoration: none !important;
+}
+
+.navbar-toggler {
+  padding: .25rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+.inactiveLink {
+  pointer-events: none;
+  cursor: default;
+}
