@@ -2,4 +2,10 @@
   .carousel-inner > .item > .a-control > .carousel-photo {
     width: 70%;
     margin: auto;
+    margin-top: 0%;
+  }
+
+  .carousalDiv {
+    padding: 0%;
+    height: 10%;
   }

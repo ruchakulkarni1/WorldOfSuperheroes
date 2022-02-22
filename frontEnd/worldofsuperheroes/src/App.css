@@ -39,6 +39,7 @@
 
 .navbar{
   background: linear-gradient(336deg, maroon, rgb(0, 0, 54) 35%);
+  margin-bottom: 0%;
 }
 
 .navbar-brand {

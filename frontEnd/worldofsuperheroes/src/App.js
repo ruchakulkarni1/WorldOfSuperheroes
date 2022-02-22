@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import {useEffect, useState } from "react";
 import Carousel from './Components/carousel';
 import About from './Components/about';
+import Info from './Components/info';
 
 function App() {
   const [state, setState] = useState([]);
@@ -49,6 +50,7 @@ function App() {
   <Route path="/home">
           <div>
             <Carousel/>
+            <Info/>
             <About/>
           </div>
   </Route>

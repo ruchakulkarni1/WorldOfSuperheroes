@@ -2,8 +2,7 @@ import "./carousel.css"
 export default function Carousel(props) {
 
    return(
-    <div class="container">
-    <br></br>
+    <div class="container-fluid carousalDiv">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -16,7 +15,7 @@ export default function Carousel(props) {
       <div class="carousel-inner" role="listbox">
   
         <div class="item active">
-          <img class="carousel-photo" src="./images/pic1.png" alt="Chania" width="460" height="345"/>
+          <img class="carousel-photo" src="./images/pic1.png" alt="Chania"/>
           <div class="carousel-caption">
             <h3>Chania</h3>
             <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
@@ -24,7 +23,7 @@ export default function Carousel(props) {
         </div>
   
         <div class="item">
-          <img class="carousel-photo" src="./images/pic2.jpeg" alt="Chania" width="460" height="345"/>
+          <img class="carousel-photo" src="./images/pic2.jpeg" alt="Chania"/>
           <div class="carousel-caption">
             <h3>Chania</h3>
             <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
@@ -32,7 +31,7 @@ export default function Carousel(props) {
         </div>
       
         <div class="item">
-          <img class="carousel-photo" src="./images/pic3.jpeg" alt="Flower" width="460" height="345"/>
+          <img class="carousel-photo" src="./images/pic3.jpeg" alt="Flower"/>
           <div class="carousel-caption">
             <h3>Flowers</h3>
             <p>Beautiful flowers in Kolymbari, Crete.</p>
@@ -40,7 +39,7 @@ export default function Carousel(props) {
         </div>
   
         <div class="item">
-          <img class="carousel-photo" src="./images/pic2.jpeg" alt="Flower" width="460" height="345"/>
+          <img class="carousel-photo" src="./images/pic2.jpeg" alt="Flower"/>
           <div class="carousel-caption">
             <h3>Flowers</h3>
             <p>Beautiful flowers in Kolymbari, Crete.</p>
