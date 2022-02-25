@@ -5,6 +5,7 @@ import {useEffect, useState } from "react";
 import Carousel from './Components/carousel';
 import About from './Components/about';
 import Info from './Components/info';
+import Compare from './Compare/compare'
 
 function App() {
   const [state, setState] = useState([]);
@@ -53,6 +54,9 @@ function App() {
             <Info/>
             <About/>
           </div>
+  </Route>
+  <Route path="/compare">
+    <Compare></Compare>
   </Route>
   </Switch>
   </div>
