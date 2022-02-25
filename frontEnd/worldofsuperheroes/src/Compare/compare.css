@@ -1,0 +1,36 @@
+.inputRow {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.vsDiv { 
+    color: #6d0202;
+    font-size: 50px;
+    background-color: white;
+    font-family: 'Bangers';
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.compareButton {
+    border: solid #6d0202;
+    color: #6d0202;
+    border-radius: 5%;
+    height: auto;
+    width: 25%;
+    font-size: 30px;
+    background-color: white;
+    font-family: 'Bangers';
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.compareButton:hover {
+    background-color: #6d0202;
+    color: white;
+    border: solid #6d0202
+}
+
+.buttonRow, .inputCol {
+    justify-content: center;
+}
