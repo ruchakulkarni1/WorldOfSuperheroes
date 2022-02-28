@@ -9,6 +9,7 @@ import Compare from './Compare/compare'
 
 function App() {
   const [state, setState] = useState([]);
+  const [quizData, setQuizData] = useState([]);
 
   const getData = async () => {
     const response = await fetch("/api");
@@ -16,10 +17,19 @@ function App() {
     setState(data);
     console.log("Data: ",data);
   }
-
+  
+  const getQuizQuestions = async () => {
+    const response = await fetch("/quizData");
+    const data = await response.json();
+    setQuizData(data);
+    console.log(data);  
+  }
   useEffect(() => {
     getData();
   }, [])
+  useEffect(() => {
+    getQuizQuestions();
+  },[]);
   return (
     <div>
     <Router>
@@ -60,6 +70,8 @@ function App() {
             <Compare data={state}></Compare>
   )}
     
+  </Route>
+  <Route path="/quiz">
   </Route>
   </Switch>
   </div>
