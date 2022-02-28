@@ -49,7 +49,6 @@
     padding-top: 2%;
     padding-bottom: 5%;
 }
-
 .comparison-bar1 {
     width: var(--bar-value);
     background-color: #6d0202;
@@ -65,4 +64,30 @@
     color: white;
     animation-name: expandBar;
     animation-duration: 1s;
+}
+
+#Comparison-statbars {
+    font-family: 'Bangers';
+    width: 50%;
+}
+
+.compareStats {
+    display: flex;
+    flex-direction: column;
+}
+
+.compareStats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.details1Div, .details2Div {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(211, 210, 210);
+    border: rgb(211, 210, 210) 1px solid;
+    border-radius: 20px;
 }

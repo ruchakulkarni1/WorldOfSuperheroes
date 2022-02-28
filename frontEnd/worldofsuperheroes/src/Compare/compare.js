@@ -42,31 +42,27 @@ function showCompare(props) {
     let details1 = document.createElement('div');
     details1.className = "details1Div";
     for(const [key, val] of Object.entries(superhero1)) {
-        details1.innerHTML += " "+ key + ": " + val+"<br/>";
+        details1.innerHTML += " "+ key.toUpperCase() + ": " + val+"<br/>";
     }
 
     let details2 = document.createElement('div');
     details2.className = "details2Div";
     for(const [key2, val2] of Object.entries(superhero2)) {
-        details1.innerHTML += " "+ key2 + ": " + val2+"<br/>";
+        details2.innerHTML += " "+ key2.toUpperCase() + ": " + val2+"<br/>";
     }
 
-    var comparisonHtmlString = `
-            <div id="Comparison-card">
-                <div id="Comparison-statbars" class="stat-bars">
-                    <div class="stat-bars-label">
-                        <p>Combat</p>
-                    </div>
-                    <div id="height-bars" class="stat-bars">
-                        <div class="comparison-bar1" style="--bar-value:${superhero1['combat']}%;">${superhero1['combat']}</div>
-                        <div class="comparison-bar2" style="--bar-value:${superhero2['combat']}%;">${superhero2['combat']}</div>
-                    </div>
-                </div>
-            </div>
-        `
-
-        document.querySelector(".compareWrapper").insertAdjacentHTML("beforeend", comparisonHtmlString);
-
+    let compareStats = document.createElement('div');
+    compareStats.className = 'compareStats';
+    
+    //let compareStats = document.querySelector('.compareStats');
+    compareStats.append(details1);
+    compareStats.append(details2);
+    if (document.getElementById("CompareStats") != null) {
+        compareStats.remove();
+    }
+    let compareWrapper = document.querySelector(".compareWrapper"); 
+    compareWrapper.append(compareStats);
+    
     console.log("--> ",superhero1, superhero2);
 }
 
