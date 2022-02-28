@@ -2,6 +2,16 @@ import "./compare.css"
 
 function showCompare(props) {
     console.log("Comparing...");
+    if (document.getElementById("CompareStats") != null) {
+        document.getElementById("CompareStats").remove();
+    }
+    if (document.querySelector(".details1Div") != null) {
+        document.querySelector(".details1Div").remove();
+    }
+    if (document.querySelector(".details2Div") != null) {
+        document.querySelector(".details2Div").remove();
+    }
+
     let superhero1 = {}, superhero2={};
     let input1 = document.getElementById("superhero1dd");
     if(input1){
@@ -42,13 +52,23 @@ function showCompare(props) {
     let details1 = document.createElement('div');
     details1.className = "details1Div";
     for(const [key, val] of Object.entries(superhero1)) {
-        details1.innerHTML += " "+ key.toUpperCase() + ": " + val+"<br/>";
+        if(key === 'name') {
+            details1.innerHTML += "<h2> "+val+"</h2><br/>";
+        }
+        else {
+            details1.innerHTML += " "+ key + ": " + val+"<br/>";
+        }
     }
 
     let details2 = document.createElement('div');
     details2.className = "details2Div";
     for(const [key2, val2] of Object.entries(superhero2)) {
-        details2.innerHTML += " "+ key2.toUpperCase() + ": " + val2+"<br/>";
+        if(key2 === 'name') {
+            details2.innerHTML += "<h2> "+val2+"</h2><br/>";
+        }
+        else {
+            details2.innerHTML += " "+ key2 + ": " + val2+"<br/>";
+        }
     }
 
     let compareStats = document.createElement('div');
@@ -57,9 +77,7 @@ function showCompare(props) {
     //let compareStats = document.querySelector('.compareStats');
     compareStats.append(details1);
     compareStats.append(details2);
-    if (document.getElementById("CompareStats") != null) {
-        compareStats.remove();
-    }
+    
     let compareWrapper = document.querySelector(".compareWrapper"); 
     compareWrapper.append(compareStats);
     

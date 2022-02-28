@@ -30,45 +30,18 @@
     justify-content: center;
 }
 
-.formDiv {
+/*.formDiv {
     margin: 20px;
     background-color: rgb(211, 210, 210);
     border: rgb(211, 210, 210) 1px solid;
     border-radius: 20px;
-}
-
-.stat-bars {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    align-content: flex-start;
-    justify-content: flex-start;
-    width: 96%;
-    margin-left: 2%;
-    margin-right: 2%;
-    padding-top: 2%;
-    padding-bottom: 5%;
-}
-.comparison-bar1 {
-    width: var(--bar-value);
-    background-color: #6d0202;
-    color: white;
-    animation-name: expandBar;
-    animation-duration: 1s;
-}
-
-.comparison-bar2 {
-    width: var(--bar-value);
-    width: var(--bar-value);
-    background-color: rgb(1, 1, 85);
-    color: white;
-    animation-name: expandBar;
-    animation-duration: 1s;
-}
-
-#Comparison-statbars {
-    font-family: 'Bangers';
-    width: 50%;
+}*/
+.formDiv {
+    margin: 20px;
+    background-color: rgb(247, 244, 244);
+    border-right: rgb(194, 178, 178) 10px solid;
+    border-bottom: rgb(194, 178, 178) 5px solid;
+    border-radius: 20px;
 }
 
 .compareStats {
@@ -87,7 +60,19 @@
 .details1Div, .details2Div {
     margin: 20px;
     padding: 20px;
-    background-color: rgb(211, 210, 210);
-    border: rgb(211, 210, 210) 1px solid;
+    background-color: white;
+    border-right: #6d0202 7px solid;
+    border-bottom: #6d0202 7px solid;
     border-radius: 20px;
+    color: #6d0202;
+}
+
+.details2Div {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-right: rgb(1, 1, 85) 7px solid;
+    border-bottom: rgb(1, 1, 85) 7px solid;
+    border-radius: 20px;
+    color: rgb(1, 1, 85);
 }
