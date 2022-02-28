@@ -27,10 +27,9 @@
 
 .formDiv {
     margin: 20px;
-    border: rgb(233, 230, 230) 0.5px solid;
-    border-right: rgb(212, 212, 212) 10px solid;
-    border-bottom: rgb(212, 212, 212) 5px solid;    
+    border: rgb(233, 230, 230) 0.5px solid;  
     border-radius: 20px;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
 }
 /*.formDiv {
     margin: 20px;
@@ -53,22 +52,62 @@
     font-weight: bolder;
 }
 
-.details1Div, .details2Div {
+.details1Div {
     margin: 20px;
     padding: 20px;
     background-color: white;
-    border-right: #6d0202 7px solid;
-    border-bottom: #6d0202 7px solid;
     border-radius: 20px;
     color: #6d0202;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
 }
 
 .details2Div {
     margin: 20px;
     padding: 20px;
     background-color: white;
-    border-right: rgb(1, 1, 85) 7px solid;
-    border-bottom: rgb(1, 1, 85) 7px solid;
     border-radius: 20px;
     color: rgb(1, 1, 85);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+}
+
+.stat-bars {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+    text-align: center;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+.comparison-bar1 {
+    width: var(--bar-value);
+    background-color: #6d0202;
+    color: white;
+    animation-name: expandBar;
+    animation-duration: 1s;
+}
+
+.comparison-bar2 {
+    width: var(--bar-value);
+    width: var(--bar-value);
+    background-color: rgb(1, 1, 85);
+    color: white;
+    animation-name: expandBar;
+    animation-duration: 1s;
+}
+
+#Comparison-statbars {
+    font-family: 'Bangers';
+    width: 50%;
+}
+
+#Comparison-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
