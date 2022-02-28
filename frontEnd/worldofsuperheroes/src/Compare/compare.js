@@ -95,29 +95,30 @@ function showCompare(props) {
     <div id="Comparison-card">
         <div id="Comparison-statbars" class="stat-bars">
             <div id="all-bars" class="stat-bars">
-                <h3>Combat</h3>
-                <div class="comparison-bar1" style="--bar-value:${superhero1['combat']}%;">${superhero1['combat']}</div>
-                <div class="comparison-bar2" style="--bar-value:${superhero2['combat']}%;">${superhero2['combat']}</div>
-
-                <h3>Durability</h3>
-                <div class="comparison-bar1" style="--bar-value:${superhero1['durability']}%;">${superhero1['durability']}</div>
-                <div class="comparison-bar2" style="--bar-value:${superhero2['durability']}%;">${superhero2['durability']}</div>
 
                 <h3>Intelligence</h3>
                 <div class="comparison-bar1" style="--bar-value:${superhero1['intelligence']}%;">${superhero1['intelligence']}</div>
                 <div class="comparison-bar2" style="--bar-value:${superhero2['intelligence']}%;">${superhero2['intelligence']}</div>
             
-                <h3>Power</h3>
-                <div class="comparison-bar1" style="--bar-value:${superhero1['power']}%;">${superhero1['power']}</div>
-                <div class="comparison-bar2" style="--bar-value:${superhero2['power']}%;">${superhero2['power']}</div>
-    
+                <h3>Strength</h3>
+                <div class="comparison-bar1" style="--bar-value:${superhero1['strength']}%;">${superhero1['strength']}</div>
+                <div class="comparison-bar2" style="--bar-value:${superhero2['strength']}%;">${superhero2['strength']}</div>
+
                 <h3>Speed</h3>
                 <div class="comparison-bar1" style="--bar-value:${superhero1['speed']}%;">${superhero1['speed']}</div>
                 <div class="comparison-bar2" style="--bar-value:${superhero2['speed']}%;">${superhero2['speed']}</div>
 
-                <h3>Strength</h3>
-                <div class="comparison-bar1" style="--bar-value:${superhero1['strength']}%;">${superhero1['strength']}</div>
-                <div class="comparison-bar2" style="--bar-value:${superhero2['strength']}%;">${superhero2['strength']}</div>
+                <h3>Durability</h3>
+                <div class="comparison-bar1" style="--bar-value:${superhero1['durability']}%;">${superhero1['durability']}</div>
+                <div class="comparison-bar2" style="--bar-value:${superhero2['durability']}%;">${superhero2['durability']}</div>
+
+                <h3>Power</h3>
+                <div class="comparison-bar1" style="--bar-value:${superhero1['power']}%;">${superhero1['power']}</div>
+                <div class="comparison-bar2" style="--bar-value:${superhero2['power']}%;">${superhero2['power']}</div>
+
+                <h3>Combat</h3>
+                <div class="comparison-bar1" style="--bar-value:${superhero1['combat']}%;">${superhero1['combat']}</div>
+                <div class="comparison-bar2" style="--bar-value:${superhero2['combat']}%;">${superhero2['combat']}</div>
             </div>
         </div>
     </div>

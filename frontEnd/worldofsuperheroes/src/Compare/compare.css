@@ -58,6 +58,7 @@
     background-color: white;
     border-radius: 20px;
     color: #6d0202;
+    border: #6d0202 5px solid;
     box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
 }
 
@@ -67,6 +68,7 @@
     background-color: white;
     border-radius: 20px;
     color: rgb(1, 1, 85);
+    border: rgb(1, 1, 85) 5px solid;
     box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
 }
 
