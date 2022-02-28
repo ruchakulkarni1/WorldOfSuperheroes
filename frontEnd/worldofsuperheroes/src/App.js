@@ -66,7 +66,10 @@ function App() {
           </div>
   </Route>
   <Route path="/compare">
-    <Compare></Compare>
+  {state && (
+            <Compare data={state}></Compare>
+  )}
+    
   </Route>
   <Route path="/quiz">
   </Route>
