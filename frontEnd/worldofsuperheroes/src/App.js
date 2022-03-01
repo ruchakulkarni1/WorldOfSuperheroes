@@ -88,8 +88,8 @@ function App() {
    {state && (
      <FilterForQuiz setFilterDataQuiz = {(fd) => setFilterDataQuiz(fd)} data={state}></FilterForQuiz>
    )}
-   {filteredDataQuiz && (
-     <Quiz data = {filteredDataQuiz}></Quiz>
+   {quizData && (
+     <Quiz data = {quizData}></Quiz>
    )}
   </Route>
   </Switch>
