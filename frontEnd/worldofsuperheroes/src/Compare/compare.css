@@ -8,22 +8,17 @@
 }
 
 .compareButton {
-    border: solid #6d0202;
-    color: #6d0202;
     border-radius: 10px;
-    height: auto;
-    width: 25%;
-    font-size: 30px;
-    background-color: white;
-    font-family: 'Bangers';
-    font-weight: bolder;
-    font-style: italic;
+    font-size: 20px;
+    background-color: rgb(228, 228, 228);
+    color: black;
+    border: solid rgb(233, 230, 230);
 }
 
 .compareButton:hover {
-    background-color: #6d0202;
-    color: white;
-    border: solid #6d0202
+    background-color: rgb(212, 212, 212);
+    color: black;
+    border: solid rgb(212, 212, 212);
 }
 
 .buttonRow, .inputCol {
@@ -32,9 +27,49 @@
 
 .formDiv {
     margin: 20px;
-    background-color: rgb(211, 210, 210);
-    border: rgb(211, 210, 210) 1px solid;
+    border: rgb(233, 230, 230) 0.5px solid;  
     border-radius: 20px;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+}
+/*.formDiv {
+    margin: 20px;
+    background-color: rgb(247, 244, 244);
+    border-right: rgb(194, 178, 178) 10px solid;
+    border-bottom: rgb(194, 178, 178) 5px solid;
+    border-radius: 20px;
+}*/
+
+.compareStats {
+    display: flex;
+    flex-direction: column;
+}
+
+.compareStats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.details1Div {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    color: #6d0202;
+    border: #6d0202 5px solid;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+}
+
+.details2Div {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    color: rgb(1, 1, 85);
+    border: rgb(1, 1, 85) 5px solid;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
 }
 
 .stat-bars {
@@ -43,6 +78,7 @@
     align-items: flex-start;
     align-content: flex-start;
     justify-content: flex-start;
+    text-align: center;
     width: 96%;
     margin-left: 2%;
     margin-right: 2%;
@@ -71,23 +107,9 @@
     width: 50%;
 }
 
-.compareStats {
+#Comparison-card {
     display: flex;
     flex-direction: column;
-}
-
-.compareStats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-    text-align: center;
-    font-weight: bolder;
-}
-
-.details1Div, .details2Div {
-    margin: 20px;
-    padding: 20px;
-    background-color: rgb(211, 210, 210);
-    border: rgb(211, 210, 210) 1px solid;
-    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
 }
