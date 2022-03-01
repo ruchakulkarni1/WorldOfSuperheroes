@@ -7,10 +7,12 @@ import About from './Components/about';
 import Info from './Components/info';
 import Compare from './Compare/compare'
 import FilterForQuiz from './Quiz/FilterForQuiz';
+import Quiz from './Quiz/quiz';
 
 function App() {
   const [state, setState] = useState([]);
   const [quizData, setQuizData] = useState([]);
+  const [filteredDataQuiz, setFilterDataQuiz] = useState([]);
 
   const getData = async () => {
     const response = await fetch("/api");
@@ -75,7 +77,10 @@ function App() {
   </Route>
   <Route path="/quiz">
    {state && (
-     <FilterForQuiz data={state}></FilterForQuiz>
+     <FilterForQuiz setFilterDataQuiz = {(fd) => setFilterDataQuiz(fd)} data={state}></FilterForQuiz>
+   )}
+   {filteredDataQuiz && (
+     <Quiz data = {filteredDataQuiz}></Quiz>
    )}
   </Route>
   </Switch>
