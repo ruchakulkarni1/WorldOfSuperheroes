@@ -27,9 +27,9 @@ function FilterForQuiz(props) {
     return (
     <div>
         <label for="dropdown" class = "labelPadding">Select a publisher for doing a quiz : </label>
-        <select class="filterPadding">{renderFilteredData()}
-        </select>
+        <select id="dropdown" class = "filterPadding" onChange = {(e) => props.setFilterDataQuiz(e.target.value)}>{renderFilteredData()}</select>
     </div>
     )
 }
+
 export default FilterForQuiz
