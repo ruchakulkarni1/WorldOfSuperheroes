@@ -6,6 +6,7 @@ import Carousel from './Components/carousel';
 import About from './Components/about';
 import Info from './Components/info';
 import Compare from './Compare/compare'
+import Characters from './Characters/characters';
 
 function App() {
   const [state, setState] = useState([]);
@@ -64,6 +65,11 @@ function App() {
             <Info/>
             <About/>
           </div>
+  </Route>
+  <Route path="/characters">
+  {state && (
+            <Characters data={state}></Characters>
+  )}
   </Route>
   <Route path="/compare">
   {state && (
