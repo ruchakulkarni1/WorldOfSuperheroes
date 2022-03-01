@@ -6,6 +6,7 @@ import Carousel from './Components/carousel';
 import About from './Components/about';
 import Info from './Components/info';
 import Compare from './Compare/compare'
+import FilterForQuiz from './Quiz/FilterForQuiz';
 
 function App() {
   const [state, setState] = useState([]);
@@ -24,6 +25,7 @@ function App() {
     setQuizData(data);
     console.log(data);  
   }
+
   useEffect(() => {
     getData();
   }, [])
@@ -72,6 +74,9 @@ function App() {
     
   </Route>
   <Route path="/quiz">
+   {state && (
+     <FilterForQuiz data={state}></FilterForQuiz>
+   )}
   </Route>
   </Switch>
   </div>
