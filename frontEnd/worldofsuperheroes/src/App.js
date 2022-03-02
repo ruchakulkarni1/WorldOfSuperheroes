@@ -9,14 +9,12 @@ import Compare from './Compare/compare'
 
 import Characters from './Characters/characters';
 
-import FilterForQuiz from './Quiz/FilterForQuiz';
 import Quiz from './Quiz/quiz';
-
+import QuizCards from './Quiz/quizWithCards';
 
 function App() {
   const [state, setState] = useState([]);
   const [quizData, setQuizData] = useState([]);
-  const [filteredDataQuiz, setFilterDataQuiz] = useState([]);
 
   const getData = async () => {
     const response = await fetch("/api");
@@ -84,13 +82,16 @@ function App() {
   )}
     
   </Route>
+  
   <Route path="/quiz">
-   {state && (
-     <FilterForQuiz setFilterDataQuiz = {(fd) => setFilterDataQuiz(fd)} data={state}></FilterForQuiz>
-   )}
-   {quizData && (
-     <Quiz data = {quizData}></Quiz>
-   )}
+  <h2 class = "pt-5 text-center text-info">Choose a Category to do a Quiz!!</h2>
+        {state && (
+          <QuizCards data={state}></QuizCards>
+        )}
+  </Route>
+  <Route path = "/quizzing">
+          {quizData && 
+          <Quiz data = {quizData}></Quiz>}
   </Route>
   </Switch>
   </div>
