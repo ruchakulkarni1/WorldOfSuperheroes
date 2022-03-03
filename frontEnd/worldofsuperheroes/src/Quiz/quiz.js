@@ -10,16 +10,16 @@ function Quiz(props) {
         const [finish, setFinish] = useState(false);
         const [show, setShow] = useState(false);
         const [clickAnswer, setClickAnswer] = useState(false);
-          
-    if(props.data) {
-        console.log('Here',props.filterData);
-        const checkAnswer = (variant) => {
-          setMyAnswer(variant);
-          setClickAnswer(true);
+
+        if(props) {
+            const quizData = props.data.filter((x)=>x.category === props.filteredData);
+            const checkAnswer = (variant) => {
+            setMyAnswer(variant);
+            setClickAnswer(true);
         };
       
         const checkCorrectAnswer = () => {
-          if (myAnswer === props.data[currentQuestion].answer) {
+          if (myAnswer === quizData[currentQuestion].answer) {
             setScore(score + 1);
           }
         };
@@ -33,7 +33,9 @@ function Quiz(props) {
         };
       
         const finishHandler = () => {
-          if (currentQuestion === props.data.length - 1) {
+            checkCorrectAnswer();
+            reset();
+          if (currentQuestion === quizData.length-1) {
             setFinish(true);
           }
         };
@@ -44,25 +46,50 @@ function Quiz(props) {
           setMyAnswer("");
           setScore(0);
           setShow(false);
-          history.push("/quiz");
+          history.push("/categories");
         };
+        const somefunc = () => {
+            const queRem = quizData.length - currentQuestion
+            return(
+                <div class = "playBox">
+                    <div id="playGameBox">
+                        <span id="remainingBox" class="smallLine">
+                            <span class="timerScoreTitle">Remaining</span>
+                            <span id="guessesremaining">{queRem}</span>
+                        </span>
+                        <span id="correctBox" class="smallLine">
+                            <span class="timerScoreTitle">Correct</span>
+                            <span>{score}</span>
+                        </span>
+                        <span id="wrongBox" class="smallLine">
+                            <span class="timerScoreTitle">Wrong</span>
+                            <span>{quizData.length-queRem-score}</span>
+                        </span>
+                        <span id = "remainingBox" class = "smallLine">
+                            <span class = "timerScoreTitle">Score</span>
+                            <span>{score}/{quizData.length}</span>
+                        </span>
+                    </div>
+                </div>
+          )
+        }
         
         const mainfunc = () => {
                 return (
                     <div class="wrapper">
+                    <h3 class = "headerText"> Welcome to {props.filteredData} Quiz!!!!</h3>
+                    <div class ="maindivquiz">
+                    <div>{somefunc()}</div>
                     <p class="textclass">
-                      {props.data[currentQuestion].question}
+                      Q{currentQuestion+1}. {quizData[currentQuestion].question}
                     </p>
-                    <span class="m-2 border-2 border-black mx-auto px-2 bg-gray text-pink-400 rounded-lg text-center">
-                      {`${currentQuestion+1}/${props.data.length}`}
-                    </span>
-                    {props.data[currentQuestion].variants.map((variant) => (
+                    {quizData[currentQuestion].variants.map((variant) => (
                       <div class="blockdesign">
                         <p
                           key={variant.id}
                           class={`variant ${
                             myAnswer === variant
-                              ? myAnswer === props.data[currentQuestion].answer
+                              ? myAnswer === quizData[currentQuestion].answer
                                 ? "correctAnswer"
                                 : "incorrectAnswer"
                               : null
@@ -83,11 +110,11 @@ function Quiz(props) {
                     )}
                     {show && (
                       <p class="showAnswer">
-                        Correct Answer: {props.data[currentQuestion].answer}
+                        Correct Answer: {quizData[currentQuestion].answer}
                       </p>
                     )}
           
-                    {currentQuestion < props.data.length -1 && (
+                    {currentQuestion < quizData.length -1 && (
                       <button
                         class="nextButton"
                         onClick={() => {
@@ -100,7 +127,7 @@ function Quiz(props) {
                       </button>
                     )}
           
-                    {currentQuestion === props.data.length-1  && (
+                    {currentQuestion === quizData.length-1  && (
                       <button
                         class="finishButton"
                         onClick={() => finishHandler()}
@@ -108,34 +135,36 @@ function Quiz(props) {
                         FINISH
                       </button>
                     )}
+                    </div>
                   </div>
                 )
         }
         if (finish) {
           return (
-            <div class="maindivquiz">
-              <div class="wrapper">
-                <h3 class="textclass">
-                  {`Game Over!
-                  Your Final Score is
-                  ${score}/${props.data.length}
-                  points.`}
+            <div class="resultDiv">
+                <h3 class="resultText">
+                  Thanks for taking the quiz!!!
+                  It was fun right?
                 </h3>
+                <h3 class ="resultText">
+                    Click on the button below to get back to the catergories page.
+                </h3>
+                <h4 class = "resultText">
+                    Your score: <span class = "scoreTextColor">{score}/{quizData.length}</span>
+                </h4>
                 <button
                   class= "nextButton"
                   onClick={() => startOver()}
                 >
-                  Start Over
+                  Go Back
                 </button>
-              </div>
+              
             </div>
           );
         } else {
-          return (
-            <div class="maindivquiz">
-                <div>{mainfunc()}</div>
-            </div>
-          );
+                return (<div>
+                    {mainfunc()}
+                </div>)
         }
       
     }

@@ -21,10 +21,11 @@ function QuizWithCards(props) {
                     publisherData.push(key);
                 }
             }
-            const dofunc = (val) => {
-                history.push('/quizzing');
+            const dofunc = (selectedFilter) => {
+                props.setFilteredQuiz(selectedFilter);
+                history.push('/quiz');
             }
-            const filterRows = publisherData.map((elem,index,) => {
+            const filterRows = publisherData.map((elem,index) => {
                 const imgName = './images/comics'+index+'.png';
                 return <li>
                         <h3>{elem}</h3>
@@ -32,7 +33,7 @@ function QuizWithCards(props) {
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting   
 			industry. Lorem Ipsum has been the industry's standard dummy text ever 
 			since the 1500s.</p>
-                    <button value={elem} onClick = {(e) => dofunc(e.target.value)}>Take A Quiz</button>
+                    <button value={elem} onClick = {(e) => dofunc(elem)}>Take A Quiz</button>
                 </li>
             })
         return filterRows;

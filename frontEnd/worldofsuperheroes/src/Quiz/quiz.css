@@ -1,24 +1,81 @@
-.maindivquiz {
+.maindivquiz, .resultDiv {
     width: 80%;
     margin: auto;
+    margin-top: 10px;
     padding: 20px;
     height: auto;
     align-items: center;
-    border: rgb(233, 230, 230) 0.5px solid;  
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%); 
+    border: rgb(233, 230, 230) 2px solid;  
 }
 
-.textclass {
-    margin: 20px;
-    padding: 10px;
-    height: 50px;
-    text-align: center;
+.resultDiv {
+    height: 300px;
+    margin-top: 60px;
+}
+
+.textclass,.resultText {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     color: black;
 }
 
+.resultText {
+    text-align: center;
+}
+
+.playBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#playGameBox {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.timerScoreTitle {
+    color: #a5aeba;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: normal;
+    line-height: 22px;
+}
+
+#guessesremaining, .scoreTextColor, .headerText {
+    color: #F90;
+}
+
+#playGameBox .timerScoreTitle {
+    display: block;
+}
+
+#playGameBox>span {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 23%;
+}
+
+#remainingBox, #correctBox, #wrongBox {
+    font-weight: 700;
+    font-size: 34pt;
+    color: #000;
+}
+
+.smallLine {
+    line-height: 98%;
+}
+
+.headerText {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 5px;
+}
 .blockdesign {
     margin: 10px;
     height: 50px;
@@ -63,12 +120,12 @@
   }
   .correctAnswer {
     color: #fef6e4;
-    background: green;
+    background: #00C301;
     padding: 1rem;
   }
   
-  .correctAnswer:after {
-    background: green;
+  .correctAnswer::after {
+    background: #00C301;
     color: white;
     visibility: visible;
     width: 100%;
@@ -78,13 +135,13 @@
   }
   
   .incorrectAnswer {
-    background: red;
+    background: #EA4C46;
     color: #fef6e4;
     padding: 1rem;
   }
   
-  .incorrectAnswer:after {
-    background: red;
+  .incorrectAnswer::after {
+    background: #EA4C46;
     color: white;
     visibility: visible;
     width: 100%;
