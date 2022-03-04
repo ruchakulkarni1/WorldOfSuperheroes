@@ -7,7 +7,7 @@
     font-style: italic;
 }
 
-.compareButton {
+.characterButton {
     border: solid #6d0202;
     color: #6d0202;
     border-radius: 10px;
@@ -20,7 +20,7 @@
     font-style: italic;
 }
 
-.compareButton:hover {
+.characterButton:hover {
     background-color: #6d0202;
     color: white;
     border: solid #6d0202
@@ -71,12 +71,12 @@
     width: 50%;
 }
 
-.compareStats {
+.characterDetails {
     display: flex;
     flex-direction: column;
 }
 
-.compareStats {
+.characterDetails {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
@@ -84,10 +84,15 @@
     font-weight: bolder;
 }
 
-.details1Div, .details2Div {
+.details, .details2Div {
     margin: 20px;
     padding: 20px;
     background-color: rgb(211, 210, 210);
     border: rgb(211, 210, 210) 1px solid;
     border-radius: 20px;
 }
+.labelPadding {
+    padding-left: 100px;
+    padding-top: 0;
+    padding-right: 5px;
+  }
