@@ -13,7 +13,14 @@ function Quiz(props) {
 
         if(props) {
             const quizData = props.data.filter((x)=>x.category === props.filteredData);
-            const checkAnswer = (variant) => {
+            const checkAnswer = (variantid,variant,variants) => {
+            console.log(variantid, variants);
+            variants.forEach(element => {
+                if(element != variantid) {
+                    let div = document.getElementById(element);
+                    div.style.pointerEvents = 'none';
+                }
+            });
             setMyAnswer(variant);
             setClickAnswer(true);
         };
@@ -74,6 +81,17 @@ function Quiz(props) {
           )
         }
         
+        const buttonClickFunction = (variants) => {
+            console.log("In blocl",variants);
+            variants.forEach(element => {
+                const div = document.getElementById(element);
+                div.style.pointerEvents = 'auto';
+            });
+            setCurrentQuestion(currentQuestion + 1);
+            checkCorrectAnswer();
+            reset();
+        }
+
         const mainfunc = () => {
                 return (
                     <div class="wrapper">
@@ -86,7 +104,7 @@ function Quiz(props) {
                     {quizData[currentQuestion].variants.map((variant) => (
                       <div class="blockdesign">
                         <p
-                          key={variant.id}
+                          key={variant.id} id = {variant}
                           class={`variant ${
                             myAnswer === variant
                               ? myAnswer === quizData[currentQuestion].answer
@@ -94,7 +112,7 @@ function Quiz(props) {
                                 : "incorrectAnswer"
                               : null
                           }`}
-                          onClick={() => checkAnswer(variant)}
+                          onClick={(e) => checkAnswer(e.target.id,variant,quizData[currentQuestion].variants)}
                         >
                           {variant}
                         </p>
@@ -117,11 +135,7 @@ function Quiz(props) {
                     {currentQuestion < quizData.length -1 && (
                       <button
                         class="nextButton"
-                        onClick={() => {
-                          setCurrentQuestion(currentQuestion + 1);
-                          checkCorrectAnswer();
-                          reset();
-                        }}
+                        onClick={() => {buttonClickFunction(quizData[currentQuestion].variants)}}
                       >
                         NEXT
                       </button>
