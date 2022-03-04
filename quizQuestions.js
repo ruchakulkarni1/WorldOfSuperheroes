@@ -1,39 +1,41 @@
-const questions = [
+const data = [
   {
-    questionText: 'What is the full name of Spiderman?',
-    answerOptions: [
-      { answerText: 'Peter Parker', isCorrect: true },
-      { answerText: 'Martha Franklin', isCorrect: false },
-      { answerText: 'Evan Daniels', isCorrect: false },
-      { answerText: 'Daniel RadCliff', isCorrect: false },
-    ],
+    id: "1",
+    question: "What kind of dog keeps the best time?",
+    answer: "Watchdog",
+    variants: [`Watchdog`, `hotdog`, `Cutedog`],
+    category: 'Marvel Comics'
   },
   {
-    questionText: 'What is the birth place of Captain America?',
-    answerOptions: [
-      { answerText: 'New Jersey City', isCorrect: false },
-      { answerText: 'New York City', isCorrect: true },
-      { answerText: 'Portland', isCorrect: false },
-      { answerText: 'Chicago', isCorrect: false },
-    ],
+    id: "2",
+    question:
+      "What time of day, when written in a capital letters, is the same forwards, backwards and upside down?",
+    answer: "Noon",
+    variants: [`Morning`, `Noon`, `Evening`],
+    category: 'Marvel Comics'
+  },
+
+  {
+    id: "3",
+    question: "What has a face and two hands but no arms or legs?",
+    answer: "Clock",
+    variants: [`Clock`, `Watch`, `Person`],
+    category: 'Dark Horse Comics'
   },
   {
-    questionText: 'What is the intelligence of Superman on a scale of 100?',
-    answerOptions: [
-      { answerText: '94', isCorrect: true },
-      { answerText: '88', isCorrect: false },
-      { answerText: '66', isCorrect: false },
-      { answerText: '78', isCorrect: false },
-    ],
+    id: "4",
+    question:
+      "What five-letter word becomes shorter when you add two letters to it?",
+    answer: "Short",
+    variants: [`Long`, `Short`, `Little`],
+    category: 'Dark Horse Comics'
   },
+
   {
-    questionText: 'What is the occupation of Captain Cold?',
-    answerOptions: [
-      { answerText: 'Student', isCorrect: false },
-      { answerText: 'Lawyer', isCorrect: false },
-      { answerText: 'Criminal', isCorrect: true },
-      { answerText: 'Aeronautics', isCorrect: false },
-    ],
-  },
-];
-module.exports = questions;
+    id: "5",
+    question: "What has a neck but no head?",
+    answer: "Bottle",
+    variants: [`Pan`, `Bottle`, `Plate`],
+    category: 'Dark Horse Comics'
+  }];
+  module.exports = data;

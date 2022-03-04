@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import {useEffect, useState } from "react";
@@ -9,13 +8,14 @@ import Compare from './Compare/compare'
 
 import Characters from './Characters/characters';
 
-import FilterForQuiz from './Quiz/FilterForQuiz';
-
+import Quiz from './Quiz/quiz';
+import QuizCards from './Quiz/quizWithCards';
 
 function App() {
   const [state, setState] = useState([]);
   const [quizData, setQuizData] = useState([]);
-
+  const [filteredQuiz, setFilteredQuiz] = useState([]);
+  
   const getData = async () => {
     const response = await fetch("/api");
     const data = await response.json();
@@ -56,7 +56,7 @@ function App() {
                 <Link to="/compare"><h4 className="links">COMPARE</h4></Link>
               </li>
               <li class="nav-item">
-                <Link to="/quiz"><h4 className="links">TAKE A QUIZ</h4></Link>
+                <Link to="/categories"><h4 className="links">TAKE A QUIZ</h4></Link>
               </li>
             </ul>
           </div>
@@ -82,10 +82,16 @@ function App() {
   )}
     
   </Route>
-  <Route path="/quiz">
-   {state && (
-     <FilterForQuiz data={state}></FilterForQuiz>
-   )}
+  
+  <Route path="/categories">
+  <h2 class = "pt-5 text-center text-info">Choose a Category to do a Quiz!!</h2>
+        {state && (
+          <QuizCards setFilteredQuiz = {(fd) => {setFilteredQuiz(fd)}}  data={state}></QuizCards>
+        )}
+  </Route>
+  <Route path = "/quiz">
+      {quizData &&
+          <Quiz data = {quizData} filteredData = {filteredQuiz}></Quiz>}
   </Route>
   </Switch>
   </div>
