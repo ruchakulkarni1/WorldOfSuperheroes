@@ -1,11 +1,22 @@
-.carousel-inner > .item > .carousel-photo,
-  .carousel-inner > .item > .a-control > .carousel-photo {
-    width: 70%;
-    margin: auto;
-    margin-top: 0%;
-  }
+
 
   .carousalDiv {
     padding: 0%;
     height: 10%;
+  }
+  .carousel-photo{
+    height: 100% !important;
+    width: 100%;
+    object-fit: contain;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+  .item{
+    width: 70%;
+    height: 400px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
   }

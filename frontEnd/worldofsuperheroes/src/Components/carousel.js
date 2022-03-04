@@ -9,41 +9,35 @@ export default function Carousel(props) {
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
         <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
       </ol>
   
     
       <div class="carousel-inner" role="listbox">
   
         <div class="item active">
-          <img class="carousel-photo" src="./images/pic1.png" alt="Chania"/>
-          <div class="carousel-caption">
-            <h3>Chania</h3>
-            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-          </div>
+          <img class="carousel-photo" src="./images/comics0.png" alt="Marvel"/>
         </div>
   
         <div class="item">
-          <img class="carousel-photo" src="./images/pic2.jpeg" alt="Chania"/>
-          <div class="carousel-caption">
-            <h3>Chania</h3>
-            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-          </div>
+          <img class="carousel-photo" src="./images/comics1.png" alt="DarkHorse"/>
         </div>
       
         <div class="item">
-          <img class="carousel-photo" src="./images/pic3.jpeg" alt="Flower"/>
-          <div class="carousel-caption">
-            <h3>Flowers</h3>
-            <p>Beautiful flowers in Kolymbari, Crete.</p>
-          </div>
+          <img class="carousel-photo" src="./images/comics2.png" alt="DC"/>
         </div>
   
         <div class="item">
-          <img class="carousel-photo" src="./images/pic2.jpeg" alt="Flower"/>
-          <div class="carousel-caption">
-            <h3>Flowers</h3>
-            <p>Beautiful flowers in Kolymbari, Crete.</p>
-          </div>
+          <img class="carousel-photo" src="./images/comics3.png" alt="NBCHeroes"/>
+        </div>
+
+        <div class="item">
+          <img class="carousel-photo" src="./images/comics4.png" alt="StarWars"/>
+        </div>
+
+        <div class="item">
+          <img class="carousel-photo" src="./images/comics5.png" alt="StarTrek"/>
         </div>
     
       </div>
