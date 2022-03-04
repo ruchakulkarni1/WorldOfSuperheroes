@@ -14,12 +14,20 @@ function showCompare(props) {
 
     let superhero1 = {}, superhero2={};
     let input1 = document.getElementById("superhero1dd");
-    if(input1){
+    if(input1 && input1.value!=="Superhero 1"){
         superhero1['name'] = input1.value;
     }
+    else {
+        alert(input1.value+" is not a valid name. Select valid super hero name!");
+        return;
+    }
     let input2 = document.getElementById("superhero2dd");   
-    if(input2){
+    if(input2 && input2.value!=="Superhero 2"){
         superhero2['name'] = input2.value;
+    }
+    else {
+        alert(input2.value+" is not a valid name. Select valid super hero name!");
+        return;
     }
     //console.log("--> ",superhero1, superhero2);
     const heroes = props.data;
