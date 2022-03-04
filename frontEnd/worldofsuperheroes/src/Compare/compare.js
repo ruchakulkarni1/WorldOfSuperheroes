@@ -1,7 +1,8 @@
 import "./compare.css"
+import { PieChart } from 'react-minimal-pie-chart';
+import { Pie } from 'react-chartjs-2';
 
 function showCompare(props) {
-    console.log("Comparing...");
     if (document.getElementById("CompareStats") != null) {
         document.getElementById("CompareStats").remove();
     }
@@ -150,7 +151,69 @@ export default function Compare(props) {
             return names;
             }
         }
-        
+
+        function showCompareStats(props) {
+            const allHeroes = props.data;
+            let male=0, female=0, other=0;
+            let good=0, bad=0, neutral=0;
+            allHeroes.forEach(hero => {
+                if(hero.appearance['gender']==="Male") {
+                    male++;
+                } else if(hero.appearance['gender']==="Female") {
+                    female++;
+                } else {
+                    console.log(hero.appearance['gender'])
+                    other++;
+                }
+
+                if(hero.biography['alignment']==="good") {
+                    good++;
+                } else if(hero.biography['alignment']==="bad") {
+                    bad++;
+                } else {
+                    neutral++;
+                }
+            })
+
+            return (<div class="allStatistics">
+                        <div class="genderDiv">
+                            <h3>Gender</h3>
+                            <div class="genderData">
+                                <div class="gender">
+                                    <img class="genderImg" src="./icons/male.png" alt="Male count" height="52px" width="50px"></img>
+                                    <h4>{male}</h4>
+                                </div>
+                                <div class="gender">
+                                    <img class="genderImg" src="./icons/female.png" alt="Female count" height="52px" width="52px"></img>
+                                    <h4>{female}</h4>
+                                </div>
+                                <div class="gender">
+                                    <img class="genderImg" src="./icons/other.png" alt="Other count" height="52px" width="50px"></img>
+                                    <h4>{other}</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="alignmentDiv">
+                        <h3>Alignment</h3>
+                        <PieChart class="pie"
+                            label={(props) => { return props.dataEntry.title+" - "+props.dataEntry.value;}}
+                            labelStyle={{
+                                fill: 'white',
+                                fontSize: '5px'
+                           }}
+                           labelPosition={65}
+                            legend={(props) => {return props.dataEntry.color+" - "+props.dataEntry.value;}}
+                            data={[
+                                { title: 'Good', value: good, color: 'lightgreen',  },
+                                { title: 'Bad', value: bad, color: 'lightcoral' },
+                                { title: 'Neutral', value: neutral, color: 'wheat' },
+                                ]}
+                                viewBoxSize={[100,100]}
+                            />
+                        </div>
+                    </div>);
+        }
+
         return(
             <div class="compareDiv">
                 <div class="formDiv">
@@ -178,8 +241,8 @@ export default function Compare(props) {
                 <div class="compareWrapper">
 
                 </div>
-                <div class="compareGraph">
-
+                <div id="newCompareGraph">
+                    {showCompareStats(props)}
                 </div>
             </div>
         );
