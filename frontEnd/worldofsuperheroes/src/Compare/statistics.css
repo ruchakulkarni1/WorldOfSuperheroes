@@ -65,3 +65,36 @@
     flex-direction: row;
     justify-content: center;
 }
+
+/* Style the tab */
+.statstab {
+    overflow: hidden;   
+    display: flex;
+    border-bottom: 1px solid rgb(209, 208, 208); 
+    justify-content: space-between;  
+  }
+  
+  /* Style the buttons inside the tab */
+  .statstablinks {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    color: black;
+    width: 200%;
+  }
+
+  .statstatTabButton {
+      border-right: 2px solid rgb(201, 198, 198);
+      border-bottom: 2px solid rgb(201, 198, 198);
+      border-radius: 5px;
+    /*background-color: lightgrey;*/
+  }
+  
+  /* Change background color of buttons on hover */
+  .statcompareTabButton:hover {
+    background-color: #ddd;
+  }
