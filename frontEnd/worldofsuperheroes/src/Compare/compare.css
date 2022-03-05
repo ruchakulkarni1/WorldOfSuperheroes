@@ -116,17 +116,16 @@
 
 
 /* Style the tab */
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-    
+.comparetab {
+    overflow: hidden;   
+    display: flex;
+    border-bottom: 1px solid rgb(209, 208, 208); 
+    justify-content: space-between;  
   }
   
   /* Style the buttons inside the tab */
-  .tablinks {
+  .comparetablinks {
     background-color: inherit;
-    float: left;
     border: none;
     outline: none;
     cursor: pointer;
@@ -134,9 +133,17 @@
     transition: 0.3s;
     font-size: 17px;
     color: black;
+    width: 200%;
   }
+
+  .comparecompareTabButton {
+    border-left: 2px solid rgb(201, 198, 198);
+      border-bottom: 2px solid rgb(201, 198, 198);
+      border-radius: 5px;
+    /*background-color: lightgrey;*/
+}
   
   /* Change background color of buttons on hover */
-  .tab button:hover {
+  .comparestatTabButton:hover {
     background-color: #ddd;
   }

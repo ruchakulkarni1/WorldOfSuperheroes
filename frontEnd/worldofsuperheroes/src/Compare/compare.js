@@ -163,9 +163,9 @@ export default function Compare(props) {
 
         return(
             <div>
-                <div class="tab">
-                    <button type="button" class="statTabButton tablinks" onClick={() => loadStats()}>Statistics</button>
-                    <button type="button" class="compareTabButton tablinks" onClick={() => loadCompare()}>Comparison</button>
+                <div class="comparetab">
+                    <button type="button" class="comparestatTabButton comparetablinks" onClick={() => loadStats()}>Statistics</button>
+                    <button type="button" class="comparecompareTabButton comparetablinks" onClick={() => loadCompare()}>Comparison</button>
                 </div>
                 <div class="compareDiv">
                     <div class="formDiv">

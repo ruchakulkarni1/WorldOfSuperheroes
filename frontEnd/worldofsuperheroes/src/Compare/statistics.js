@@ -231,9 +231,9 @@ export default function Statistics(props) {
 
         return (
         <div>
-            <div class="tab">
-                    <button type="button" class="statTabButton tablinks"onClick={() => loadStats()}>Statistics</button>
-                    <button type="button" class="compareTabButton tablinks" onClick={() => loadCompare()}>Comparison</button>
+            <div class="statstab">
+                    <button type="button" class="statstatTabButton statstablinks" onClick={() => loadStats()}>Statistics</button>
+                    <button type="button" class="statcompareTabButton statstablinks" onClick={() => loadCompare()}>Comparison</button>
                 </div>
             <div class="allStatistics">
             <div class="row1">
@@ -303,7 +303,7 @@ export default function Statistics(props) {
     return(
         <div>
             <div id="newCompareGraph">
--                    {showCompareStats(props)}
+                    {showCompareStats(props)}
             </div>
         </div>
     )
