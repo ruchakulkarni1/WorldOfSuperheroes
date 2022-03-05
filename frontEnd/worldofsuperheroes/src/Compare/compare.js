@@ -1,6 +1,7 @@
 import "./compare.css"
 import { PieChart } from 'react-minimal-pie-chart';
 import { Pie } from 'react-chartjs-2';
+import { useHistory } from "react-router-dom";
 
 function showCompare(props) {
     if (document.getElementById("CompareStats") != null) {
@@ -142,6 +143,7 @@ compareWrapper.insertAdjacentHTML("beforeend", comparisonHtmlString);
 }
 
 export default function Compare(props) {
+    const history = useHistory();
     if(props.data) {
         const showNames = () => {
             if(props.data) {
@@ -152,97 +154,46 @@ export default function Compare(props) {
             }
         }
 
-        function showCompareStats(props) {
-            const allHeroes = props.data;
-            let male=0, female=0, other=0;
-            let good=0, bad=0, neutral=0;
-            allHeroes.forEach(hero => {
-                if(hero.appearance['gender']==="Male") {
-                    male++;
-                } else if(hero.appearance['gender']==="Female") {
-                    female++;
-                } else {
-                    console.log(hero.appearance['gender'])
-                    other++;
-                }
-
-                if(hero.biography['alignment']==="good") {
-                    good++;
-                } else if(hero.biography['alignment']==="bad") {
-                    bad++;
-                } else {
-                    neutral++;
-                }
-            })
-
-            return (<div class="allStatistics">
-                        <div class="genderDiv">
-                            <h3>Gender</h3>
-                            <div class="genderData">
-                                <div class="gender">
-                                    <img class="genderImg" src="./icons/male.png" alt="Male count" height="52px" width="50px"></img>
-                                    <h4>{male}</h4>
-                                </div>
-                                <div class="gender">
-                                    <img class="genderImg" src="./icons/female.png" alt="Female count" height="52px" width="52px"></img>
-                                    <h4>{female}</h4>
-                                </div>
-                                <div class="gender">
-                                    <img class="genderImg" src="./icons/other.png" alt="Other count" height="52px" width="50px"></img>
-                                    <h4>{other}</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="alignmentDiv">
-                        <h3>Alignment</h3>
-                        <PieChart class="pie"
-                            label={(props) => { return props.dataEntry.title+" - "+props.dataEntry.value;}}
-                            labelStyle={{
-                                fill: 'white',
-                                fontSize: '5px'
-                           }}
-                           labelPosition={65}
-                            legend={(props) => {return props.dataEntry.color+" - "+props.dataEntry.value;}}
-                            data={[
-                                { title: 'Good', value: good, color: 'lightgreen',  },
-                                { title: 'Bad', value: bad, color: 'lightcoral' },
-                                { title: 'Neutral', value: neutral, color: 'wheat' },
-                                ]}
-                                viewBoxSize={[100,100]}
-                            />
-                        </div>
-                    </div>);
+        const loadStats = () => {
+            history.push('/statistics');
+        }
+        const loadCompare = () => {
+            history.push('/compare');
         }
 
         return(
-            <div class="compareDiv">
-                <div class="formDiv">
-                <form class="text-center">
-                <div class="form-row inputRow">
-                    <div class="col inputCol d-flex justify-content-center">
-                       <select className="form-control w-50 mt-5" id="superhero1dd" defaultValue="Superhero 1" required>
+            <div>
+                <div class="tab">
+                    <button type="button" class="statTabButton tablinks" onClick={() => loadStats()}>Statistics</button>
+                    <button type="button" class="compareTabButton tablinks" onClick={() => loadCompare()}>Comparison</button>
+                </div>
+                <div class="compareDiv">
+                    <div class="formDiv">
+                    <form class="text-center">
+                    <div class="form-row inputRow">
+                        <div class="col inputCol d-flex justify-content-center">
+                            <select className="form-control w-50 mt-5" id="superhero1dd" defaultValue="Superhero 1" required>
                             <option value="Superhero 1" hidden >Superhero 1</option>
                             {showNames()}
-                        </select>    
-                    </div>
+                            </select>    
+                        </div>
                     
-                    <div class="col inputCol d-flex justify-content-center">   
-                        <select className="form-control w-50 mt-5" id="superhero2dd" defaultValue="Superhero 2" required>
+                        <div class="col inputCol d-flex justify-content-center">   
+                            <select className="form-control w-50 mt-5" id="superhero2dd" defaultValue="Superhero 2" required>
                             <option value="Superhero 2" hidden>Superhero 2</option>
                             {showNames()}
-                        </select> 
+                            </select> 
+                        </div>
                     </div>
-                </div>
-                <div class="form-row buttonRow text-center m-5">
-                <button type="button" class="compareButton" onClick={() => showCompare(props)}>Compare</button>
-                </div>
-                </form>  
-                </div>
-                <div class="compareWrapper">
+                    <div class="form-row buttonRow text-center m-5">
+                        <button type="button" class="compareButton" onClick={() => showCompare(props)}>Compare</button>
+                    </div>
+                    </form>  
+                    </div>
+                    <div class="compareWrapper">
 
-                </div>
-                <div id="newCompareGraph">
-                    {showCompareStats(props)}
+                    </div>
+                    
                 </div>
             </div>
         );
