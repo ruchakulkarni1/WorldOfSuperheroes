@@ -272,7 +272,29 @@ export default function Statistics(props) {
                             viewBoxSize={[100,100]}
                         />
                     </div>
-                    
+                    <div class="alterEgoDiv">
+                        <h3>Alter Ego</h3>
+                        <PieChart class="pie"
+                            label={(props) => { return props.dataEntry.title+" - "+props.dataEntry.value;}}
+                            labelStyle={{
+                                fill: 'white',
+                                fontSize: '5px'
+                            }}
+                            labelPosition={65}
+                            legend={(props) => {return props.dataEntry.color+" - "+props.dataEntry.value;}}
+                            data={[
+                                { title: 'Yes', value: egoYes, color: 'darkgoldenrod',  },
+                                { title: 'No', value: egoNo, color: 'brown' },
+                            ]}
+                            viewBoxSize={[100,100]}
+                        />
+                    </div>
+                    </div>
+                    <div class="row2">
+                    <div class="powerDiv">
+                        <h3>Super Power Stats</h3>
+                        <Line  data={statsData} legend={legend} width={1000} height={500} ></Line>
+                    </div>
                     </div>
                     </div>
                 </div>);
