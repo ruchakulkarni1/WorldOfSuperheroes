@@ -4,7 +4,8 @@ import {useEffect, useState } from "react";
 import Carousel from './Components/carousel';
 import About from './Components/about';
 import Info from './Components/info';
-import Compare from './Compare/compare'
+import Compare from './Compare/compare';
+import Statistics from './Compare/statistics';
 
 import Characters from './Characters/characters';
 
@@ -53,7 +54,7 @@ function App() {
                 <Link to="/characters"><h4 className="links">CHARACTERS</h4></Link>
               </li>
               <li class="nav-item">
-                <Link to="/compare"><h4 className="links">COMPARE</h4></Link>
+                <Link to="/statistics"><h4 className="links">COMPARE</h4></Link>
               </li>
               <li class="nav-item">
                 <Link to="/categories"><h4 className="links">TAKE A QUIZ</h4></Link>
@@ -76,11 +77,13 @@ function App() {
             <Characters data={state}></Characters>
   )}
   </Route>
+  <Route path="/statistics">
+  <Statistics data={state}></Statistics>
+  </Route>
   <Route path="/compare">
   {state && (
             <Compare data={state}></Compare>
   )}
-    
   </Route>
   
   <Route path="/categories">
