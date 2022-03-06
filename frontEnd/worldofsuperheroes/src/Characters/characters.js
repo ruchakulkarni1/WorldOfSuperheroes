@@ -226,7 +226,7 @@ export default function Characters(props) {
                 <div class="form-row inputRow">
                     <div class="row inputCol1 d-flex justify-content-center">
                     <div class="col inputCol1 d-flex justify-content-center">
-                    <label for="dropdown" class = "">Select a Superhero Category:</label>
+                    <label for="dropdown" class = "labelPadding">Select a Superhero Category:</label>
                     </div>
                     <div class="col inputCol1 d-flex justify-content-center">
                     <select className="form-control w-50 mt-5" class="input1" id="superhero1dd" defaultValue="None Selected" onChange={() => publisherFilter(props)} required>
@@ -242,7 +242,7 @@ export default function Characters(props) {
                 <div class="form-row inputRow">
                     <div class="row inputCol1 d-flex justify-content-center">
                     <div class="col inputCol1 d-flex justify-content-center">
-                    <label for="dropdown" class = "">Select a Superhero by name:</label>
+                    <label for="dropdown" class = "labelPadding">Select a Superhero by name:</label>
                     </div>
                     <div class="col inputCol1 d-flex justify-content-center">
                     <select className="form-control w-50 mt-5" class="input1" id="superheroName" defaultValue="None Selected" onChange={() => showCharacters(props)} required>
@@ -255,7 +255,7 @@ export default function Characters(props) {
                 </div>
                 </form>  
                 </div>
-                <div class="characterWrapper1" id="characterWrapper1"></div>
+                <div class="characterWrapper1"></div>
                 <div class="characterWrapper" ></div>
             </div>
         );
