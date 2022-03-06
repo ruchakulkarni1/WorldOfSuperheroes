@@ -2,22 +2,16 @@ import "./characters.css"
 import Loader from "react-loader-spinner";
 
 function publisherFilter(props){
-    if (document.getElementById("characterWrapper") != null) {
-        document.getElementById("characterWrapper").remove();
+    if (document.getElementById("profile") != null) {
+        document.getElementById("profile").remove();
     }
-    if (document.getElementById("characterWrapper1") != null) {
-        document.getElementById("characterWrapper1").remove();
-    }
-    if (document.getElementById("flip-card") != null) {
-        document.getElementById("flip-card").remove();
-    }
-    if (document.getElementById("characterDetails1") != null) {
-        document.getElementById("characterDetails1").remove();
-    }
-    if (document.querySelector(".details1") != null) {
-        document.querySelector(".details1").remove();
+    if (document.getElementById("characterWrapper") != null){
+    while(document.getElementById("characterWrapper").firstElementChild) {
+        document.getElementById("characterWrapper").firstElementChild.remove();
+     }
     }
     let characterWrapper = document.querySelector(".characterWrapper");
+    characterWrapper.id = 'characterWrapper';
     let superhero = {};
     let superheroD = {};
     let input = document.getElementById("superhero1dd");
@@ -34,7 +28,6 @@ function publisherFilter(props){
             superhero['image'] = hero.images['md'];
             superheroD['name'] = hero.name;
             superheroD['fullName'] = hero.biography.fullName;
-            superheroD['publisher'] = hero.biography.publisher;
             superheroD['combat']  = hero.powerstats.combat;
             superheroD['durability']  = hero.powerstats.durability;
             superheroD['intelligence']  = hero.powerstats.intelligence;
@@ -73,7 +66,7 @@ function publisherFilter(props){
         
         let card = document.createElement('div');
         card.className = 'flip-card';
-        card.id ="flip-card";
+        card.id ='flip-card';
         let cardinner = document.createElement('div');
         cardinner.className = 'flip-card-inner';
         cardinner.id ="flip-card-inner";
@@ -97,24 +90,14 @@ function publisherFilter(props){
 
 
 function showCharacters(props) {
-    if (document.getElementById("characterWrapper1") != null) {
-        document.getElementById("characterWrapper1").remove();
-    }
     if (document.getElementById("profile") != null) {
         document.getElementById("profile").remove();
     }
-    if (document.getElementById("characterWrapper") != null) {
-        document.getElementById("characterWrapper").remove();
-    }
-    if (document.getElementById("displayImage") != null) {
-        document.getElementById("displayImage").remove();
-    }
-    if (document.getElementById("characterDetails") != null) {
-        document.getElementById("characterDetails").remove();
-    }
-    if (document.querySelector(".detailsChar") != null) {
-        document.querySelector(".detailsChar").remove();
-    }
+    if (document.getElementById("characterWrapper") != null){
+        while(document.getElementById("characterWrapper").firstElementChild) {
+            document.getElementById("characterWrapper").firstElementChild.remove();
+         }
+        }
     let characterWrapper = document.querySelector(".characterWrapper");
    
     let superhero = {};
