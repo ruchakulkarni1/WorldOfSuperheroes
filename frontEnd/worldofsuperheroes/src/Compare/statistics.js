@@ -109,8 +109,10 @@ export default function Statistics(props) {
         let powerArray=[]
         let combatArray=[]
         let nameArray=[]
+
         allHeroes.forEach(element => {
             nameArray.push(element.biography['publisher'])
+            
             intArray.push(element.powerstats['intelligence'])
             strengthArray.push(element.powerstats['strength'])
             speedArray.push(element.powerstats['speed'])
@@ -118,72 +120,74 @@ export default function Statistics(props) {
             powerArray.push(element.powerstats['power'])
             combatArray.push(element.powerstats['combat'])
       });
+      
 
-      const intCount={'10': 0, '30': 0, '50': 0, '70': 0, '90': 0};
+        const intOccur = intArray.reduce((acc, e) => 
+            acc.set(e, (acc.get(e) || 0) + 1), 
+            new Map()
+            );
+        
+        const strengthOccur = strengthArray.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
+        const speedOccur = speedArray.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
+        const durOccur = durArray.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
+        const powerOccur = powerArray.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
+        const combatOccur = combatArray.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
+
+        const intOccur2 = new Map([...intOccur.entries()].sort(function(a,b){return a[0] - b[0]}));
+        const strengthOccur2 = new Map([...strengthOccur.entries()].sort(function(a,b){return a[0] - b[0]}));
+        const speedOccur2 = new Map([...speedOccur.entries()].sort(function(a,b){return a[0] - b[0]}));
+        const durOccur2 = new Map([...durOccur.entries()].sort(function(a,b){return a[0] - b[0]}));
+        const powerOccur2 = new Map([...powerOccur.entries()].sort(function(a,b){return a[0] - b[0]}));
+        const combatOccur2 = new Map([...combatOccur.entries()].sort(function(a,b){return a[0] - b[0]}));
+
+      let labelsForStats=[];
       
-      intArray.forEach(i => {
-          if(i===0 && i<=20) {
-              intCount['10']++;
-          } 
-          else if (i===21 && i<=40) {
-              intCount['30']++;
-          }
-          else if (i===41 && i<=60) {
-            intCount['50']++;
-          }
-          else if (i===61 && i<=80) {
-            intCount['70']++;
-          }
-          else if (i===81 && i<=100) {
-            intCount['90']++;
-          }
-      })
-      console.log(intArray)
-      
+      for(let j=0;j<=100;j=j+1) {
+          labelsForStats.push(j);
+      }
+
       const statsData = {
-
-      
-        labels: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
+        labels: labelsForStats,
         datasets: [
           {
             label: "Intelligence",
-            data: intArray,
+            data: [...intOccur2.entries()],
             fill: false,
             backgroundColor: "rgb(252, 70, 26)",
             borderColor: "rgba(252, 70, 26, 0.5)",
-            
+            labels: [...intOccur.values()]
           },
           {
             label: "Strength",
-            data: strengthArray,
+            data: [...strengthOccur2.entries()],
             fill: false,
             backgroundColor: "rgb(0, 109, 140)",
             borderColor: "rgba(0, 109, 140, 0.5)",
           },
           {
             label: "Speed",
-            data: speedArray,
+            data: [...speedOccur2.entries()],
             fill: false,
             backgroundColor: "rgb(255, 159, 64)",
             borderColor: "rgba(255, 159, 64, 0.8)",
           },
           {
             label: "Durability",
-            data: durArray,
+            data: [...durOccur2.entries()],
             fill: false,
             backgroundColor: "rgb(199, 199, 199)",
             borderColor: "rgba(199, 199, 199, 0.5)",
           },
           {
             label: "Power",
-            data: powerArray,
+            data: [...powerOccur2.entries()],
             fill: false,
             backgroundColor: "rgb(40, 159, 64)",
             borderColor: "rgba(40, 159, 64, 0.5)",
           },
           {
             label: "Combat",
-            data: combatArray,
+            data: [...combatOccur2.entries()],
             fill: false,
             backgroundColor: "rgb(75, 192, 192)",
             borderColor: "rgba(75, 192, 192, 0.5)",
@@ -211,6 +215,13 @@ export default function Statistics(props) {
               ticks: {
                 beginAtZero: true,
               },
+              title: {
+                display: true,
+                text: "Frequency",
+                font: {
+                    size: 15
+                }
+            },
             },
           ],
           xAxes: [
@@ -219,14 +230,26 @@ export default function Statistics(props) {
                 autoSkip: false,
                 maxRotation: 180,
                 minRotation: 180
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'Frequency'
               }
-            }
+            },
+            
           ],
         },
         tooltips: {
+           callbacks: {
+                labels: function(tooltipItem, data) {
+                    var dataset = data.datasets[tooltipItem.datasetIndex];
+                    var index = tooltipItem.index;
+                    return dataset.labels[index] + ': ' + dataset.data[index];
+                }
+                }
         },
         responsive: true,
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
       };
 
         return (
@@ -293,7 +316,7 @@ export default function Statistics(props) {
                     <div class="row2">
                     <div class="powerDiv">
                         <h3>Super Power Stats</h3>
-                        <Line  data={statsData} legend={legend} width={1000} height={500} ></Line>
+                        <Line  data={statsData} legend={legend} options={options} width={1000} height={500} ></Line>
                     </div>
                     </div>
                     </div>
