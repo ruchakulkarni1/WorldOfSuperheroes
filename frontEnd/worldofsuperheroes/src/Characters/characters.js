@@ -34,6 +34,7 @@ function publisherFilter(props){
             superhero['image'] = hero.images['md'];
             superheroD['name'] = hero.name;
             superheroD['fullName'] = hero.biography.fullName;
+            superheroD['publisher'] = hero.biography.publisher;
             superheroD['combat']  = hero.powerstats.combat;
             superheroD['durability']  = hero.powerstats.durability;
             superheroD['intelligence']  = hero.powerstats.intelligence;
@@ -94,84 +95,6 @@ function publisherFilter(props){
 });  
 }  
 
-function displayCharacters(props){
-    if (document.getElementById("characterWrapper") != null) {
-        document.getElementById("characterWrapper").remove();
-    }
-    if (document.getElementById("displayImage") != null) {
-        document.getElementById("displayImage").remove();
-    }
-    if (document.getElementById("characterDetails1") != null) {
-        document.getElementById("characterDetails1").remove();
-    }
-    if (document.querySelector(".details1") != null) {
-        document.querySelector(".details1").remove();
-    }
-    let characterWrapper1 = document.querySelector(".characterWrapper1");
-    let superhero = {}
-    let superheroD ={}
-    const heroes = props.data;
-    heroes.forEach(hero =>{
-    superhero['name'] = hero.name;
-    superhero['image'] = hero.images['md'];
-    superheroD['name'] = hero.name;
-    superheroD['fullName'] = hero.biography.fullName;
-    superheroD['firstAppearance'] = hero.biography.firstAppearance;
-    superheroD['publisher'] = hero.biography.publisher;
-    superheroD['height'] = hero.appearance['height'][0];
-    superheroD['weight'] = hero.appearance['weight'][0];
-    superheroD['alignment'] = hero.biography.alignment;
-    
-
-    for(const [key, val] of Object.entries(hero.powerstats)) {
-        superhero[key] = val;
-    }
-
-let figure = document.createElement('div');
-figure.className = "figure";
-figure.id = "figure";
-let image = document.createElement('img');
-image.src  = superhero['image'];
-image.className = "image";
-image.id = "image";
-figure.append(image);
-let figCap = document.createElement('div');
-figCap.className = "figCap";
-figCap.id = "figCap";
-figCap = superhero['name'];
-figure.append(figCap);
-let details1 = document.createElement('div');
-details1.className = "details1";
-for(const [key, val] of Object.entries(superhero)) {
-    image.innerHTML += " "+ key.toUpperCase() + ": " + val+"<br/>";
-}
-for(const [key, val] of Object.entries(superheroD)) {
-    details1.innerHTML += " "+ key.toUpperCase() + ": " + val+"<br/><br/>";
-}
-
-
-let card = document.createElement('div');
-card.className = 'flip-card';
-card.id ="flip-card";
-let cardinner = document.createElement('div');
-cardinner.className = 'flip-card-inner';
-cardinner.id ="flip-card-inner";
-card.append(cardinner);
-let displayImage = document.createElement('div');
-cardinner.append(displayImage);
-displayImage.className = 'flip-card-front';
-displayImage.id ="flip-card-front";
-displayImage.append(figure);
-
-let characterDetails1 = document.createElement('div');
-cardinner.append(characterDetails1);
-characterDetails1.className = 'flip-card-back';
-characterDetails1.id = "flip-card-back"
-characterDetails1.append(details1);
-characterWrapper1.appendChild(card);
-    //characterWrapper1.append(characterDetails1);
-});  
-}
 
 function showCharacters(props) {
     if (document.getElementById("characterWrapper1") != null) {
