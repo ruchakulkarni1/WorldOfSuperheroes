@@ -1,15 +1,4 @@
-.characterButton {
-    border: solid #6d0202;
-    color: #6d0202;
-    border-radius: 10px;
-    height: auto;
-    width: 25%;
-    font-size: 30px;
-    background-color: white;
-    font-family: 'Bangers';
-    font-weight: bolder;
-    font-style: italic;
-}
+
 
 .characterButton:hover {
     background-color: #6d0202;
@@ -17,41 +6,36 @@
     border: solid #6d0202
 }
 
-.buttonRow, .inputCol {
+.buttonRow1, .inputCol1 {
     justify-content: center;
 }
 
-.formDivChar {
-    margin: 20px;
-    background-color: rgb(211, 210, 210);
-    border: rgb(211, 210, 210) 1px solid;
-    border-radius: 20px;
-}
-
 .characterDetails {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
     display: flex;
     flex-direction: column;
 }
 
-.characterDetails {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-    text-align: center;
-    font-weight: bolder;
-}
+
 
 .detailsChar {
     margin: 20px;
     padding: 20px;
-    background-color: rgb(211, 210, 210);
+    background-color: rgb(1, 1, 39);
     border: rgb(211, 210, 210) 1px solid;
-    border-radius: 20px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    font-style: italic;
 }
 .labelPadding {
+    font-size: x-large ;
     padding-left: 100px;
-    padding-top: 0;
-    padding-right: 5px;
+    padding-top: 30px;
+    color: white;
   }
   .characterWrapper, .characterWrapper1{
       margin: auto;
@@ -69,7 +53,7 @@
     perspective: 1000px;
     padding: 20px;
     border-radius: 50px;
-    background-color: rgb(29, 33, 34);
+    background-color:rgb(2, 2, 46);;
     margin: 10px;
   }
   .flip-card-inner {
@@ -102,7 +86,7 @@
   
   /* Style the back side */
   .flip-card-back {
-    background-color:darkslategrey;
+    background-color:rgb(54, 2, 2);
     color: white;
     transform: rotateY(180deg);
     border-radius: 50px;
@@ -131,5 +115,70 @@
     flex-direction: column;
     padding: 10px;
   }
-  
-  
+  .profile{
+    background-color: rgb(2, 2, 46);
+    padding: 20px;
+    border-style: solid;
+    border-color: rgb(2, 2, 46);
+    border-radius: 30px;
+  }
+  .displayImage{
+    width: auto;
+    height: 400px;
+  }
+  .detailsChar{
+    height: 300px; 
+    overflow-y: scroll;
+    background-color:rgb(54, 2, 2);
+  }
+  .form1{
+    background-color:rgb(1, 1, 39);
+    color: white;
+    height: 100px;
+    width: 100%;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: row wrap;
+  }
+  .form2{
+    background-color: rgb(1, 1, 39);
+    color: white;
+    height: 100px;
+    width: 100%;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: row wrap;
+  }
+  .formDivChar {
+    margin: auto;
+    border-radius: 20px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+.characterButton {
+    border-radius: 10px;
+    font-size: 15px;
+    background-color:white;
+    color: black;
+    border: solid rgb(233, 230, 230);
+}
+.input1{
+  width: 300px;
+  border-radius: 10px;
+}
+.input2{
+  width: 300px;
+  border-radius: 10px;
+}

@@ -34,11 +34,13 @@ function publisherFilter(props){
             superhero['image'] = hero.images['md'];
             superheroD['name'] = hero.name;
             superheroD['fullName'] = hero.biography.fullName;
-            superheroD['firstAppearance'] = hero.biography.firstAppearance;
-            superheroD['publisher'] = hero.biography.publisher;
-            superheroD['height'] = hero.appearance['height'][0];
-            superheroD['weight'] = hero.appearance['weight'][0];
-            superheroD['alignment'] = hero.biography.alignment;
+            superheroD['combat']  = hero.powerstats.combat;
+            superheroD['durability']  = hero.powerstats.durability;
+            superheroD['intelligence']  = hero.powerstats.intelligence;
+            superheroD['power']  = hero.powerstats.power;
+            superheroD['speed']  = hero.powerstats.speed;
+            superheroD['strength']  = hero.powerstats.strength;
+            
             
         
             for(const [key, val] of Object.entries(hero.powerstats)) {
@@ -175,6 +177,9 @@ function showCharacters(props) {
     if (document.getElementById("characterWrapper1") != null) {
         document.getElementById("characterWrapper1").remove();
     }
+    if (document.getElementById("profile") != null) {
+        document.getElementById("profile").remove();
+    }
     if (document.getElementById("characterWrapper") != null) {
         document.getElementById("characterWrapper").remove();
     }
@@ -190,21 +195,32 @@ function showCharacters(props) {
     let characterWrapper = document.querySelector(".characterWrapper");
    
     let superhero = {};
+    let superheroD = {};
     let input = document.getElementById("superheroName");
     if(input){
         superhero['name'] = input.value;
     }
-    
-    console.log("--> ",superhero);
     const heroes = props.data;
     console.log(heroes);
     heroes.forEach(hero => {
         
         if(hero.name.toLowerCase() === superhero['name'].toLowerCase()) {
 
-            superhero['height'] = hero.appearance['height'][0];
-            superhero['weight'] = hero.appearance['weight'][0];
             superhero['image'] = hero.images['md'];
+            superheroD['name'] = hero.name;
+            superheroD['fullName'] = hero.biography.fullName;
+            superheroD['gender'] = hero.appearance.gender;
+            superheroD['publisher'] = hero.biography.publisher;
+            superheroD['alignment'] = hero.biography.alignment;
+            superheroD['height'] = hero.appearance['height'][0];
+            superheroD['weight'] = hero.appearance['weight'][0];
+            superheroD['combat']  = hero.powerstats.combat;
+            superheroD['durability']  = hero.powerstats.durability;
+            superheroD['intelligence']  = hero.powerstats.intelligence;
+            superheroD['power']  = hero.powerstats.power;
+            superheroD['speed']  = hero.powerstats.speed;
+            superheroD['strength']  = hero.powerstats.strength;
+            
 
             for(const [key, val] of Object.entries(hero.powerstats)) {
                 superhero[key] = val;
@@ -221,28 +237,38 @@ function showCharacters(props) {
     for(const [key, val] of Object.entries(superhero)) {
         image.innerHTML += " "+ key.toUpperCase() + ": " + val+"<br/>";
     }
-    for(const [key, val] of Object.entries(superhero)) {
-        detailsChar.innerHTML += " "+ key.toUpperCase() + ": " + val+"<br/>";
+    for(const [key, val] of Object.entries(superheroD)) {
+        detailsChar.innerHTML += " "+ key.toUpperCase() + ": " + val+"<br/><br/>";
     }
 
-    
-
+    let profile = document.createElement('div');
+    profile.id ='profile';
+    profile.className='profile';
     let displayImage = document.createElement('div');
     displayImage.className = 'displayImage';
     displayImage.id ="displayImage";
     displayImage.append(image);
-
+    profile.append(displayImage);
     let characterDetails = document.createElement('div');
     characterDetails.className = 'characterDetails';
     characterDetails.id = "characterDetails"
     characterDetails.append(detailsChar);
-        characterWrapper.append(displayImage);
-        characterWrapper.append(characterDetails);
+    profile.append(characterDetails);
+    characterWrapper.append(profile);
+        
     
 }
 
 export default function Characters(props) {
     if(props.data) {
+        const showNames = () => {
+            if(props.data) {
+                const names = props.data.map((elem) => {
+                    return <option value = {elem.name}>{elem.name}</option>
+                })
+            return names;
+            }
+        }
         const renderFilteredData = () => {
             if(props.data) {
                 let publisherData = [];
@@ -273,25 +299,36 @@ export default function Characters(props) {
             
             <div class="characterDiv">
                 <div class="formDivChar">
-                <form class="text-center">
+                <form class="text-center form1">
                 <div class="form-row inputRow">
-                    <div class="col inputCol d-flex justify-content-center">
-                    <label for="dropdown" class = "labelPadding">Select a Publisher: </label>
-                    <select className="form-control w-50 mt-5" id="superhero1dd" defaultValue="None Selected" onChange={() => publisherFilter(props)} required>
+                    <div class="row inputCol1 d-flex justify-content-center">
+                    <div class="col inputCol1 d-flex justify-content-center">
+                    <label for="dropdown" class = "">Select a Superhero Category:</label>
+                    </div>
+                    <div class="col inputCol1 d-flex justify-content-center">
+                    <select className="form-control w-50 mt-5" class="input1" id="superhero1dd" defaultValue="None Selected" onChange={() => publisherFilter(props)} required>
                             <option value="None Selected" hidden >None Selected</option>
                             {renderFilteredData()}
-                        </select>     
+                        </select>
+                        </div>     
                     </div>
                     
                 </div>
+                </form> 
+                <form class="text-center form2">
                 <div class="form-row inputRow">
-                <div class="col inputCol d-flex justify-content-center">
-                       <input className="form-control w-50 mt-5" id="superheroName" defaultValue="Superhero Name" required> 
-                        </input>    
+                    <div class="row inputCol1 d-flex justify-content-center">
+                    <div class="col inputCol1 d-flex justify-content-center">
+                    <label for="dropdown" class = "">Select a Superhero by name:</label>
                     </div>
-                </div>
-                <div class="form-row buttonRow text-center m-5">
-                <button type="button" class="characterButton" onClick={() => showCharacters(props)}>Show Character</button>
+                    <div class="col inputCol1 d-flex justify-content-center">
+                    <select className="form-control w-50 mt-5" class="input1" id="superheroName" defaultValue="None Selected" onChange={() => showCharacters(props)} required>
+                            <option value="None Selected" hidden >None Selected</option>
+                            {showNames()}
+                        </select>
+                        </div>     
+                    </div>
+                    
                 </div>
                 </form>  
                 </div>
