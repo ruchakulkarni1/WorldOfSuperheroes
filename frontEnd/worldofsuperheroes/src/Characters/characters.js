@@ -34,7 +34,6 @@ function publisherFilter(props){
             superhero['image'] = hero.images['md'];
             superheroD['name'] = hero.name;
             superheroD['fullName'] = hero.biography.fullName;
-            superheroD['firstAppearance'] = hero.biography.firstAppearance;
             superheroD['publisher'] = hero.biography.publisher;
             superheroD['height'] = hero.appearance['height'][0];
             superheroD['weight'] = hero.appearance['weight'][0];
@@ -175,6 +174,9 @@ function showCharacters(props) {
     if (document.getElementById("characterWrapper1") != null) {
         document.getElementById("characterWrapper1").remove();
     }
+    if (document.getElementById("profile") != null) {
+        document.getElementById("profile").remove();
+    }
     if (document.getElementById("characterWrapper") != null) {
         document.getElementById("characterWrapper").remove();
     }
@@ -190,21 +192,32 @@ function showCharacters(props) {
     let characterWrapper = document.querySelector(".characterWrapper");
    
     let superhero = {};
+    let superheroD = {};
     let input = document.getElementById("superheroName");
     if(input){
         superhero['name'] = input.value;
     }
-    
-    console.log("--> ",superhero);
     const heroes = props.data;
     console.log(heroes);
     heroes.forEach(hero => {
         
         if(hero.name.toLowerCase() === superhero['name'].toLowerCase()) {
 
-            superhero['height'] = hero.appearance['height'][0];
-            superhero['weight'] = hero.appearance['weight'][0];
             superhero['image'] = hero.images['md'];
+            superheroD['name'] = hero.name;
+            superheroD['fullName'] = hero.biography.fullName;
+            superheroD['gender'] = hero.appearance.gender;
+            superheroD['publisher'] = hero.biography.publisher;
+            superheroD['alignment'] = hero.biography.alignment;
+            superheroD['height'] = hero.appearance['height'][0];
+            superheroD['weight'] = hero.appearance['weight'][0];
+            superheroD['combat']  = hero.powerstats.combat;
+            superheroD['durability']  = hero.powerstats.durability;
+            superheroD['intelligence']  = hero.powerstats.intelligence;
+            superheroD['power']  = hero.powerstats.power;
+            superheroD['speed']  = hero.powerstats.speed;
+            superheroD['strength']  = hero.powerstats.strength;
+            
 
             for(const [key, val] of Object.entries(hero.powerstats)) {
                 superhero[key] = val;
@@ -221,23 +234,25 @@ function showCharacters(props) {
     for(const [key, val] of Object.entries(superhero)) {
         image.innerHTML += " "+ key.toUpperCase() + ": " + val+"<br/>";
     }
-    for(const [key, val] of Object.entries(superhero)) {
-        detailsChar.innerHTML += " "+ key.toUpperCase() + ": " + val+"<br/>";
+    for(const [key, val] of Object.entries(superheroD)) {
+        detailsChar.innerHTML += " "+ key.toUpperCase() + ": " + val+"<br/><br/>";
     }
 
-    
-
+    let profile = document.createElement('div');
+    profile.id ='profile';
+    profile.className='profile';
     let displayImage = document.createElement('div');
     displayImage.className = 'displayImage';
     displayImage.id ="displayImage";
     displayImage.append(image);
-
+    profile.append(displayImage);
     let characterDetails = document.createElement('div');
     characterDetails.className = 'characterDetails';
     characterDetails.id = "characterDetails"
     characterDetails.append(detailsChar);
-        characterWrapper.append(displayImage);
-        characterWrapper.append(characterDetails);
+    profile.append(characterDetails);
+    characterWrapper.append(profile);
+        
     
 }
 

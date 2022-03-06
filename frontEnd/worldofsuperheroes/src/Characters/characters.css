@@ -29,24 +29,25 @@
 }
 
 .characterDetails {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
     display: flex;
     flex-direction: column;
 }
 
-.characterDetails {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-    text-align: center;
-    font-weight: bolder;
-}
+
 
 .detailsChar {
     margin: 20px;
     padding: 20px;
-    background-color: rgb(211, 210, 210);
+    background-color: rgb(1, 1, 39);
     border: rgb(211, 210, 210) 1px solid;
-    border-radius: 20px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    font-style: italic;
 }
 .labelPadding {
     padding-left: 100px;
@@ -69,7 +70,7 @@
     perspective: 1000px;
     padding: 20px;
     border-radius: 50px;
-    background-color: rgb(29, 33, 34);
+    background-color:rgb(2, 2, 46);;
     margin: 10px;
   }
   .flip-card-inner {
@@ -102,7 +103,7 @@
   
   /* Style the back side */
   .flip-card-back {
-    background-color:darkslategrey;
+    background-color:rgb(54, 2, 2);
     color: white;
     transform: rotateY(180deg);
     border-radius: 50px;
@@ -131,5 +132,20 @@
     flex-direction: column;
     padding: 10px;
   }
-  
+  .profile{
+    background-color: rgb(2, 2, 46);
+    padding: 20px;
+    border-style: solid;
+    border-color: rgb(2, 2, 46);
+    border-radius: 30px;
+  }
+  .displayImage{
+    width: auto;
+    height: 400px;
+  }
+  .detailsChar{
+    height: 300px; 
+    overflow-y: scroll;
+    background-color:rgb(54, 2, 2);
+  }
   
