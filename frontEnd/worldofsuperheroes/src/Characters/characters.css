@@ -32,9 +32,6 @@
     font-style: italic;
 }
 .labelPadding {
-    font-size: x-large ;
-    padding-left: 100px;
-    padding-top: 30px;
     color: white;
   }
   .characterWrapper, .characterWrapper1{
@@ -133,7 +130,6 @@
   }
   .form1{
     background-color:rgb(1, 1, 39);
-    color: white;
     height: 100px;
     width: 100%;
     border-radius: 20px;
@@ -147,7 +143,6 @@
   }
   .form2{
     background-color: rgb(1, 1, 39);
-    color: white;
     height: 100px;
     width: 100%;
     border-radius: 20px;
