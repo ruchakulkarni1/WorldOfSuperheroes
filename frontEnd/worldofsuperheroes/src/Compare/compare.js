@@ -1,6 +1,4 @@
 import "./compare.css"
-import { PieChart } from 'react-minimal-pie-chart';
-import { Pie } from 'react-chartjs-2';
 import { useHistory } from "react-router-dom";
 
 function showCompare(props) {
