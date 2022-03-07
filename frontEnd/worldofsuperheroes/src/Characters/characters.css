@@ -1,11 +1,5 @@
 
 
-.characterButton:hover {
-    background-color: #6d0202;
-    color: white;
-    border: solid #6d0202
-}
-
 .buttonRow1, .inputCol1 {
     justify-content: center;
 }
