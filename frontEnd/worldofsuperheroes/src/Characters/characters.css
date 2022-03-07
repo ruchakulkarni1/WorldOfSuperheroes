@@ -160,8 +160,20 @@
     border-radius: 20px;
     justify-content: center;
     display: flex;
-    flex-direction: row;
     padding: 5px;
+    flex-direction: row;
+    flex-wrap: row wrap;
+}
+@media (max-width:450px){
+  .formDivChar {
+    margin: auto;
+    border-radius: 20px;
+    justify-content: center;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    flex-wrap: column wrap;
+}
 }
 .characterButton {
     border-radius: 10px;
