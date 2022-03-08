@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "run-client": "cd .. && npm run build",
+    "run-client": "cd frontEnd/worldofsuperheroes && npm run build",
     "start": "(npm run run-client) && node server.js",
     "devstart": "(npm run run-client) && nodemon server.js"
   },
