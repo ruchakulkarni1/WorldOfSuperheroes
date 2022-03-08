@@ -4,6 +4,7 @@
 
 .aboutHeading {
     text-align: center;
+    color: white;
 }
 
 .aboutIcon {
@@ -13,4 +14,8 @@
 
 .authorName {
     height: 40px;
+    color: white;
+}
+.linkStyle{
+    color: white;
 }
