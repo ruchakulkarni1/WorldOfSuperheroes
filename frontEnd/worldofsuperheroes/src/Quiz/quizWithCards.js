@@ -29,7 +29,7 @@ function QuizWithCards(props) {
                     publisherData.push(key);
                 }
             }
-            const dofunc = (selectedFilter) => {
+            const populateQuiz = (selectedFilter) => {
                 props.setFilteredQuiz(selectedFilter);
                 history.push('/quiz');
             }
@@ -37,9 +37,9 @@ function QuizWithCards(props) {
                 const imgName = './images/comics'+index+'.png';
                 return <li>
                         <h3>{elem}</h3>
-                        <img class = "imageQuiz" src={imgName} alt={imgName}/>
+                        <img class = "imageQuiz" src={imgName} alt=""/>
                         <p>{cardData[index]}</p>
-                    <button value={elem} onClick = {(e) => dofunc(elem)}>Take A Quiz</button>
+                    <button value={elem} onClick = {(e) => populateQuiz(elem)}>Take A Quiz</button>
                 </li>
             })
         return filterRows;
