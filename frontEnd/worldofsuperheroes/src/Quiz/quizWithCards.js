@@ -2,6 +2,14 @@ import './quizWithCards.css';
 import { useHistory } from "react-router-dom";
 
 function QuizWithCards(props) {
+    const cardData = [
+        'Marvel Comics is the brand name and primary imprint of Marvel Worldwide Inc.,formerly Marvel Publishing, Inc. and Marvel Comics Group',
+        'Dark Horse Comics is an American comic book and manga publisher. It was founded in 1986 by Mike Richardson in Milwaukie, Oregon',
+        'DC Comics, Inc. is an American comic book publisher and the flagship unit of DC Entertainment, a subsidiary of the Warner Bros',
+        'NBC - Heroes are ordinary people around the world who discovered they have super powers. Their lives intertwine as they work together to prevent a catastrophic future.',
+        'George Walton Lucas Jr. is an American film director, producer, screenwriter, and entrepreneur. Lucas is best known for creating the Star Wars and Indiana Jones franchises.',
+        '"Star Trek: Discovery" begins roughly a decade before Captain Kirk five-year mission -- as portrayed in the original "Star Trek" from the 1960s -- and a century before the events of "Star Trek: Enterprise."'
+    ]
     const history = useHistory();
     const renderFilteredData = () => {
         if(props.data) {
@@ -30,9 +38,7 @@ function QuizWithCards(props) {
                 return <li>
                         <h3>{elem}</h3>
                         <img class = "imageQuiz" src={imgName} alt={imgName}/>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting   
-			industry. Lorem Ipsum has been the industry's standard dummy text ever 
-			since the 1500s.</p>
+                        <p>{cardData[index]}</p>
                     <button value={elem} onClick = {(e) => dofunc(elem)}>Take A Quiz</button>
                 </li>
             })
