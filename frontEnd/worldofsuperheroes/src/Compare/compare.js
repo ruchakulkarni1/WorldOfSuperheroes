@@ -160,7 +160,7 @@ export default function Compare(props) {
         }
 
         return(
-            <div>
+            <div class="compareBody">
                 <div class="comparetab">
                     <button type="button" class="comparestatTabButton comparetablinks" onClick={() => loadStats()}>Statistics</button>
                     <button type="button" class="comparecompareTabButton comparetablinks" onClick={() => loadCompare()}>Comparison</button>
