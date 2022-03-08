@@ -7,6 +7,7 @@ import Info from './Components/info';
 import Compare from './Compare/compare';
 import Statistics from './Compare/statistics';
 
+
 import Characters from './Characters/characters';
 
 import Quiz from './Quiz/quiz';
@@ -42,11 +43,12 @@ function App() {
     <Router>
       <div>
         <nav class="navbar navbar-expand-lg navbar-dark ">
+            <h2 className="h2Style">WORLD OF SUPERHEROES</h2>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbarMd">
               <span class="navbar-toggler-icon"></span>
             </button>
-          <div class="navbar-collapse collapse" id="collapsingNavbarMd">
-            <ul class="navbar-nav">
+          <div class="navbar-collapse collapse justify-content-end" id="collapsingNavbarMd">
+            <ul class="navbar-nav ">
               <li class="nav-item">
                 <Link to="/home"><h4 className="links">HOME</h4></Link>
               </li>
@@ -57,7 +59,7 @@ function App() {
                 <Link to="/statistics"><h4 className="links">COMPARE</h4></Link>
               </li>
               <li class="nav-item">
-                <Link to="/categories"><h4 className="links">TAKE A QUIZ</h4></Link>
+                <Link to="/categories"><h4 className="links">QUIZ</h4></Link>
               </li>
             </ul>
           </div>
@@ -65,13 +67,6 @@ function App() {
    
   
   <Switch>
-  <Route path="/home">
-          <div>
-            <Carousel/>
-            <Info/>
-            <About/>
-          </div>
-  </Route>
   <Route path="/characters">
   {state && (
             <Characters data={state}></Characters>
@@ -95,6 +90,13 @@ function App() {
   <Route path = "/quiz">
       {quizData &&
           <Quiz data = {quizData} filteredData = {filteredQuiz}></Quiz>}
+  </Route>
+  <Route path="/">
+          <div>
+            <Carousel/>
+            <Info/>
+            <About/>
+          </div>
   </Route>
   </Switch>
   </div>

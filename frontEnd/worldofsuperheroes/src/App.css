@@ -38,8 +38,13 @@
 }
 
 .navbar{
-  background: linear-gradient(336deg, maroon, rgb(0, 0, 54) 35%);
+  
+ 
+  background-color: rgb(90, 5, 5);
   margin-bottom: 0%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0px !important;
 }
 
 .navbar-brand {
@@ -77,4 +82,14 @@
 .inactiveLink {
   pointer-events: none;
   cursor: default;
+}
+.h2Style{
+  color: white;
+  padding-left: 20px;
+}
+body{
+  background: linear-gradient(180deg, maroon, rgb(0, 0, 54) 35%);
+}
+.background{
+ 
 }

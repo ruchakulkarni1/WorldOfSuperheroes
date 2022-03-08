@@ -1,5 +1,23 @@
 .info {
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 50px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+   
+    font-size: 25px;
+    color: white;
+}
+
+.infoDiv {
+    margin: 50px;
+    text-align: center;
+    justify-content: center;
+}
+
+.haveFun {
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+    color: red;
+}
+
+.tabNameSpan {
+    color: red;
 }

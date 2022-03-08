@@ -1,14 +1,21 @@
 .author {
     text-align: center;
-    margin-top: 50px;
 }
 
 .aboutHeading {
     text-align: center;
-    margin-top: 50px;
+    color: white;
 }
 
 .aboutIcon {
     width: 75px;
     height: 75px;
+}
+
+.authorName {
+    height: 40px;
+    color: white;
+}
+.linkStyle{
+    color: white;
 }

@@ -1,10 +1,6 @@
 
 
-.characterButton:hover {
-    background-color: #6d0202;
-    color: white;
-    border: solid #6d0202
-}
+
 
 .buttonRow1, .inputCol1 {
     justify-content: center;
@@ -117,7 +113,7 @@
     background-color: rgb(2, 2, 46);
     padding: 20px;
     border-style: solid;
-    border-color: rgb(2, 2, 46);
+    border-color:white;
     border-radius: 30px;
   }
   .displayImage{
