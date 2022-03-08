@@ -4,8 +4,11 @@
   "main": "index.js",
   "scripts": {
     "run-client": "cd frontEnd/worldofsuperheroes && npm run build",
-    "start": "(npm run run-client) && node server.js",
-    "devstart": "(npm run run-client) && nodemon server.js"
+    "install-client": "cd frontEnd/worldofsuperheroes && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "server": "nodemon server.js",
+    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
   },
   "repository": {
     "type": "git",
