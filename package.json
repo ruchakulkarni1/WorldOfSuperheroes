@@ -1,14 +1,12 @@
 {
   "name": "WorldOfSuperheroes",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "run-client": "cd frontEnd/worldofsuperheroes && npm run build",
     "install-client": "cd frontEnd/worldofsuperheroes && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
-    "server": "nodemon server.js",
-    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
