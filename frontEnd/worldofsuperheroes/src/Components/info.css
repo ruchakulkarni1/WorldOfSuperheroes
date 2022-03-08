@@ -1,8 +1,9 @@
 .info {
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
+   
     font-size: 25px;
+    color: white;
 }
 
 .infoDiv {

@@ -10,7 +10,7 @@ export default function Info() {
         <br/>On <span class="tabNameSpan">"Characters"</span> page, you can search superheroes based on categories or individual superheroes.
         <br/>On <span class="tabNameSpan">"Compare"</span> page, you can see statistical analysis of all superheroes based on different attributes.
         You can also compare two superheroes based on these attributes.
-        <br/>Go through all this information and then <span class="tabNameSpan">"Take a Quiz"</span> and learn more about interesting facts of 
+        <br/>Go through all this information and then <span class="tabNameSpan">"Quiz"</span> and learn more about interesting facts of 
         superheroes!
         <br/><br/><span class="haveFun">Have fun!!</span>
         </h4>
