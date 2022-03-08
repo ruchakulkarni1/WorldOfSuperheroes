@@ -10,10 +10,9 @@ const data = [
     id: "102",
     question: "What was the former occupation of Captain America?",
     answer: "soldier",
-    variants: [`criminal`,`soldier`, `lawyer`, `doctor`],
+    variants: [`pilot`,`soldier`, `lawyer`, `doctor`],
     category: 'Marvel Comics'
   },
-
   {
     id: "103",
     question: "What is the strength of Hulk on a scale of 100?",

@@ -82,7 +82,7 @@ function App() {
   </Route>
   
   <Route path="/categories">
-  <h2 class = "pt-5 text-center text-info">Choose a Category to do a Quiz!!</h2>
+  <h2 class = "pt-5 text-center text-white">Choose a Category to do a Quiz!!</h2>
         {state && (
           <QuizCards setFilteredQuiz = {(fd) => {setFilteredQuiz(fd)}}  data={state}></QuizCards>
         )}
