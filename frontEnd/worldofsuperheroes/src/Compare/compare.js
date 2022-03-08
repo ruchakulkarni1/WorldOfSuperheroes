@@ -102,6 +102,12 @@ function showCompare(props) {
     let comparisonHtmlString = `
     <div id="Comparison-card">
         <div id="Comparison-statbars" class="stat-bars">
+            <div id="legendBars" class="legendBar">
+            <div class="superhero1Legend legends"></div>
+            <label class="superhero1Label labels">${superhero1['name']}</label>
+            <div class="superhero2Legend legends"></div>
+            <label class="superhero2Label labels">${superhero2['name']}</label>
+            </div>
             <div id="all-bars" class="stat-bars">
 
                 <h3>Intelligence</h3>
