@@ -16,7 +16,7 @@ function Quiz(props) {
             const checkAnswer = (variantid,variant,variants) => {
             console.log(variantid, variants);
             variants.forEach(element => {
-                if(element != variantid) {
+                if(element !== variantid) {
                     let div = document.getElementById(element);
                     div.style.pointerEvents = 'none';
                 }
@@ -98,9 +98,9 @@ function Quiz(props) {
                     <h3 class = "headerText"> Welcome to {props.filteredData} Quiz!!!!</h3>
                     <div class ="maindivquiz">
                     <div>{somefunc()}</div>
-                    <p class="textclass">
+                    <h4 class="textclass">
                       Q{currentQuestion+1}. {quizData[currentQuestion].question}
-                    </p>
+                    </h4>
                     {quizData[currentQuestion].variants.map((variant) => (
                       <div class="blockdesign">
                         <p
