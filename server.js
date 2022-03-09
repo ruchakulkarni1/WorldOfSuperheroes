@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const appjs = require("./frontEnd/worldofsuperheroes/src/App");
 
 const data = require("./apiData");
 const quizData = require("./quizQuestions");
