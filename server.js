@@ -9,6 +9,11 @@ const app = express();
 app.use(cors());
 app.use(express.static('public'));
 
+app.get("/", (req, res) => {
+    console.log("Server is runninh.. Hi there!!")
+    res.json(data);
+});
+
 app.get("/api", (req, res) => {
     res.json(data);
 });
