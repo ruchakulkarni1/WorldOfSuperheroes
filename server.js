@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const appjs = require("./frontEnd/worldofsuperheroes/src/App")
 
 const data = require("./apiData");
 const quizData = require("./quizQuestions");
@@ -11,7 +12,7 @@ app.use(express.static('public'));
 
 app.get("/", (req, res) => {
     console.log("Server is running.. Hi there!!")
-    res.json("data");
+    res.json(appjs);
 });
 
 app.get("/api", (req, res) => {
