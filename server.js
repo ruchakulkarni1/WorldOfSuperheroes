@@ -7,11 +7,11 @@ const { applyEach } = require("async");
 const app = express();
 
 app.use(cors());
-app.use(express.static('public'));
+//app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, "frontEnd/worldofsuperheroes", "build")))
 
 app.get("/", (req, res) => {
-    console.log("Server is runninh.. Hi there!!")
-    res.json(data);
+    res.sendFile(path.join(__dirname, "frontEnd/worldofsuperheroes", "build", "index.html"));
 });
 
 app.get("/api", (req, res) => {
