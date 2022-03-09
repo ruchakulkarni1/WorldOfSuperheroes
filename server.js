@@ -12,7 +12,7 @@ app.use(express.static('public'));
 
 app.get("/", (req, res) => {
     console.log("Server is running.. Hi there!!")
-    res.send(appjs);
+    res.json(data);
 });
 
 app.get("/api", (req, res) => {
